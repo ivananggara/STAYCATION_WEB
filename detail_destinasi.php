@@ -51,7 +51,7 @@
             <h1>Nearest <span class="sub-title">Hotels</span></h1>
             <div class="row">
                 <div class="col-12 m-auto">
-                    <div class="owl-carousel owl-theme">
+                    <div class="owl-carousel owl-des owl-theme">
                         <div class="item">
                             <div class="card">
                                 <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
@@ -116,12 +116,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="container-fluid my-5">
-            </div>
-            <div class="row">
-                <div class="col">
-
             </div>
         </div>
     </section>
@@ -162,9 +156,34 @@
             </div>
         </div>
     </section> -->
+    
     <?php 
         include("includes/footer.php");
         include("includes/script.php");
     ?>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 15,
+            nav: true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                300: {
+                    items: 2
+                },
+                650: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+    </script>
 </body>
 </html>

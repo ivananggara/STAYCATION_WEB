@@ -167,4 +167,52 @@ html{
     border-radius: 50%;
     border: 3px solid #fff;
   } */
-
+#card-destination{
+    padding-top: 120px;
+}
+#card-destination h1{
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 86px;
+    color: var(--black);
+    text-align: left;
+}
+#card-destination h1:nth-child(2){
+    margin-bottom: 90px;
+}
+#card-destination .card{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 20px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+#card-destination h1 .sub-title{
+    color: var(--green);
+}
+.owl-item .active::before{
+    background-color: transparent !important;
+}
+.owl-nav{
+    display: none;
+}
+.owl-dots .active::before{
+    background-color: transparent !important;
+}
+#card-destination .item{
+    margin: 0 20px 15px 20px;
+    padding: 10px 0;
+}
+/* #card-destination .card{
+    border: none;
+} */
+#card-destination .card img{
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
