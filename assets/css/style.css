@@ -48,7 +48,7 @@ table {
 }
 
 :root{
-    --black : #121212;
+    --black : #101010;
     --black75 : #5C5759;
     --black50 : #928F90;
     --black25 : #C9C7C8;
@@ -73,13 +73,13 @@ html{
 .dark{
     background-color: var(--black);
 }
-.navbar .navbar-brand .logo{
+.logo{
     font-weight: 700;
     font-size: 32px;
     line-height: 48px;
     color: var(--green);
 }
-.navbar .navbar-brand .sub-logo{
+.logo .sub-logo{
     color: var(--white);
 }
 .navbar .navbar-nav .search-icon{
@@ -159,4 +159,57 @@ html{
     -o-border-radius: 25px;
     /* border: 2px solid var(--green); */
     margin-left: 40px;
+}
+footer {
+    background: var(--black);
+}
+footer .footer{
+    padding: 48px 0;
+}
+footer .desc-footer{
+    color: var(--white);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 31px;
+    margin-top: 16px;
+    width: 80%;
+}
+footer .footer .sub-footer{
+    color: var(--white);
+}
+footer .footer .sub-footer h1{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 16px;
+    padding-top: 12px;
+}
+footer .footer .sub-footer p{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 31px;
+    margin-bottom: 8px;
+}
+footer .footer .sub-footer a{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 31px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+footer .footer .sub-footer a:hover{
+    color: var(--green);
+}
+.copyright{
+    color: var(--white);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 31px;
+    margin-top: 45px;
 }

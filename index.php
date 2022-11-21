@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/home.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>Staycation</title>
-</head>
+<?php 
+    include("includes/head.php");
+?>
+<link rel="stylesheet" href="assets/css/home.css" type="text/css">
 <body>
-    <?php
-
-    $now = strval(basename($_SERVER['PHP_SELF'], '.php'));
+    <?php 
+        include("includes/navbar_home.php");
     ?>
-    <nav class="navbar navbar-expand-lg position-fixed w-100 bg-transparent" style="z-index: 999;">
-    <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href=".">
-                <h1 class="logo my-auto">Stay<span class="sub-logo">cation.</span></h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row align-items-center">
-                <li class="search-icon d-flex flex-row justify-content-between align-items-center">
-                    <input class="bg-transparent" type="text" placeholder="search by city">
-                    <a href=""><img src="assets/img/search-btn.svg" alt=""></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?= strcmp($now, 'index') == 0 ? ' active' : '' ?>" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?= strcmp($now, 'profile') == 0 ? ' active' : '' ?>" href="profile.php">My Profile</a>
-                <li class="nav-item-sign">
-                    <a class="nav-link-sign" href="">SignIn/SignUp</a>
-                </li>
-            </ul>
-            </div>
-    </div>
-    </nav>
-
     <section id="hero">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-
+                    <div class="header d-flex flex-column align-items-center justify-content-center text-center">
+                        <h1>Forget Your Work Let’s <span class="sub-text-hero">Holiday</span> With Us</h1>
+                        <p>We provide what you need to enjoy your holiday with family. Time to make another memorable moments.</p>
+                        <a href="#popular">Discover</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- <section id="popular">
+        <div class="container my-swiper swiper">
+            <div class="content">
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+                        </div>
+                        <div class="text">
+                            <h1>Hello</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+
+                        </div>
+                        <div class="text">
+                            <h1>Hello</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+
+                        </div>
+                        <div class="text">
+                            <h1>Hello</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    
+    
+
+    <?php 
+        include("includes/footer.php");
+        include("includes/script.php");
+    ?>
 </body>
 </html>
