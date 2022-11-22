@@ -119,71 +119,9 @@
             </div>
         </div>
     </section>
-
-    <!-- <section id="popular">
-        <div class="container my-swiper swiper">
-            <div class="content">
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="image">
-
-                        </div>
-                        <div class="text">
-                            <h1>Hello</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="image">
-
-                        </div>
-                        <div class="text">
-                            <h1>Hello</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="image">
-
-                        </div>
-                        <div class="text">
-                            <h1>Hello</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    
     <?php 
         include("includes/footer.php");
         include("includes/script.php");
     ?>
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 15,
-            nav: true,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                300: {
-                    items: 2
-                },
-                650: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        })
-    </script>
 </body>
 </html>

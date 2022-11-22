@@ -32,111 +32,129 @@
                             <div class="card">
                                 <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                 <div class="card-body">
-                                    <div class="card-title">
-                                        <h4>Destination name</h4>
-                                        <div class="text">
-                                            <h2>Bali, <span>Denpasar</span></h2>
-                                            <div class="rate">
-                                                <img src="" alt="">
-                                                <h6>4.8</h6>
-                                            </div>
+                                    <h4>nusa dua</h4>
+                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                        <h2>bali, <span>denpasar</span></h2>
+                                        <div class="rate ">
+                                            <img src="" alt="">
+                                            <h6>4.8</h6>
                                         </div>
+                                    </div>
+                                    <div class="btn-destination w-100 text-center">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
+                            <div class="card">
                                 <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                 <div class="card-body">
-                                <div class="card-title">
-                                        <h4>Destination name</h4>
-                                        <div class="text">
-                                            <h2>Bali, <span>Denpasar</span></h2>
-                                            <div class="rate">
-                                                <img src="" alt="">
-                                                <h6>4.8</h6>
-                                            </div>
+                                    <h4>nusa dua</h4>
+                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                        <h2>bali, <span>denpasar</span></h2>
+                                        <div class="rate ">
+                                            <img src="" alt="">
+                                            <h6>4.8</h6>
                                         </div>
+                                    </div>
+                                    <div class="btn-destination w-100 text-center">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
+                            <div class="card">
                                 <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                 <div class="card-body">
-                                <div class="card-title">
-                                        <h4>Destination name</h4>
-                                        <div class="text">
-                                            <h2>Bali, <span>Denpasar</span></h2>
-                                            <div class="rate">
-                                                <img src="" alt="">
-                                                <h6>4.8</h6>
-                                            </div>
+                                    <h4>nusa dua</h4>
+                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                        <h2>bali, <span>denpasar</span></h2>
+                                        <div class="rate ">
+                                            <img src="" alt="">
+                                            <h6>4.8</h6>
                                         </div>
+                                    </div>
+                                    <div class="btn-destination w-100 text-center">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
+                            <div class="card">
                                 <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                 <div class="card-body">
-                                <div class="card-title">
-                                        <h4>Destination name</h4>
-                                        <div class="text">
-                                            <h2>Bali, <span>Denpasar</span></h2>
-                                            <div class="rate">
-                                                <img src="" alt="">
-                                                <h6>4.8</h6>
-                                            </div>
+                                    <h4>nusa dua</h4>
+                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                        <h2>bali, <span>denpasar</span></h2>
+                                        <div class="rate ">
+                                            <img src="" alt="">
+                                            <h6>4.8</h6>
                                         </div>
+                                    </div>
+                                    <div class="btn-destination w-100 text-center">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card border-0 shadow">
+                            <div class="card">
                                 <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                 <div class="card-body">
-                                <div class="card-title">
-                                        <h4>Destination name</h4>
-                                        <div class="text">
-                                            <h2>Bali, <span>Denpasar</span></h2>
-                                            <div class="rate">
-                                                <img src="" alt="">
-                                                <h6>4.8</h6>
-                                            </div>
+                                    <h4>nusa dua</h4>
+                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                        <h2>bali, <span>denpasar</span></h2>
+                                        <div class="rate ">
+                                            <img src="" alt="">
+                                            <h6>4.8</h6>
                                         </div>
+                                    </div>
+                                    <div class="btn-destination w-100 text-center">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card border-0 shadow">
+                            <div class="card">
                                 <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                 <div class="card-body">
-                                <div class="card-title">
-                                        <h4>Destination name</h4>
-                                        <div class="text">
-                                            <h2>Bali, <span>Denpasar</span></h2>
-                                            <div class="rate">
-                                                <img src="" alt="">
-                                                <h6>4.8</h6>
-                                            </div>
+                                    <h4>nusa dua</h4>
+                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                        <h2>bali, <span>denpasar</span></h2>
+                                        <div class="rate ">
+                                            <img src="" alt="">
+                                            <h6>4.8</h6>
                                         </div>
+                                    </div>
+                                    <div class="btn-destination w-100 text-center">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-    
+                        <div class="item">
+                            <div class="card">
+                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
+                                <div class="card-body">
+                                    <h4>nusa dua</h4>
+                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                        <h2>bali, <span>denpasar</span></h2>
+                                        <div class="rate ">
+                                            <img src="" alt="">
+                                            <h6>4.8</h6>
+                                        </div>
+                                    </div>
+                                    <div class="btn-destination w-100 text-center">
+                                        <a href="detail_destinasi.php">Click here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -217,85 +235,9 @@
             </div>
         </div>
     </section>
-    <!-- <section id="popular">
-        <div class="container my-swiper swiper">
-            <div class="content">
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="image">
-
-                        </div>
-                        <div class="text">
-                            <h1>Hello</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="image">
-
-                        </div>
-                        <div class="text">
-                            <h1>Hello</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="image">
-
-                        </div>
-                        <div class="text">
-                            <h1>Hello</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    
-    
-
     <?php 
         include("includes/footer.php");
         include("includes/script.php");
     ?>
-    <script>
-        $('.owl-one').owlCarousel({
-            loop: true,
-            margin: 15,
-            nav: true,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        })
-        $('.owl-two').owlCarousel({
-            loop: true,
-            margin: 15,
-            nav: true,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                800: {
-                    items: 2
-                },
-            }
-        })
-    </script>
 </body>
 </html>

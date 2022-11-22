@@ -2,7 +2,7 @@
 
     $now = strval(basename($_SERVER['PHP_SELF'], '.php'));
     ?>
-    <nav class="navbar navbar-expand-lg position-fixed w-100 bg-transparent" style="z-index: 999;">
+    <nav id="nav-home" class="navbar navbar-expand-lg position-fixed w-100 bg-transparent" style="z-index: 999;">
     <div class="container">
             <a class="navbar-brand d-flex align-items-center" href=".">
                 <h1 class="logo my-auto">Stay<span class="sub-logo">cation.</span></h1>
@@ -28,3 +28,4 @@
             </div>
     </div>
     </nav>
+    <script src="../assets/js/script.js"></script>
