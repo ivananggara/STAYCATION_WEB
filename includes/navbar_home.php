@@ -1,5 +1,4 @@
 <?php
-
     $now = strval(basename($_SERVER['PHP_SELF'], '.php'));
     ?>
     <nav id="nav-home" class="navbar navbar-expand-lg position-fixed w-100 bg-transparent" style="z-index: 999;">

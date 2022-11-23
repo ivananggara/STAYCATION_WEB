@@ -26,7 +26,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -147,31 +147,10 @@
             </div>
         </div>
     </section>
-
+    
     <?php 
         include("includes/footer.php");
         include("includes/script.php");
     ?>
-    <script>
-        $('.owl-one').owlCarousel({
-            loop: true,
-            margin: 15,
-            nav: true,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        })
-    </script>
 </body>
 </html>

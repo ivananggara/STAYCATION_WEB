@@ -40,7 +40,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
@@ -130,30 +130,13 @@
                                             <h6>4.8</h6>
                                         </div>
                                     </div>
-                                    <div class="btn-destination w-100 text-center">
+                                    <div class="btn-green">
                                         <a href="detail_destinasi.php">Click here</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4>nusa dua</h4>
-                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
-                                        <h2>bali, <span>denpasar</span></h2>
-                                        <div class="rate ">
-                                            <img src="" alt="">
-                                            <h6>4.8</h6>
-                                        </div>
-                                    </div>
-                                    <div class="btn-destination w-100 text-center">
-                                        <a href="detail_destinasi.php">Click here</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         
                     </div>
                 </div>
@@ -161,73 +144,99 @@
             </div>
         </div>
     </section>
-    <section id="card-destination">
+    <section id="traveller-says">
         <div class="container">
-            <h1><span class="sub-title">Popular </span>place by</h1>
-            <h1>staycation</h1>
+            <div class="row w-100 text-center">
+                <h1>Travellers <span class="sub-title">Says</span></h1>
+            </div>
             <div class="row">
                 <div class="col-12 m-auto">
                     <div class="owl-carousel owl-two owl-theme">
                         <div class="item">
                             <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
+                                    <div class="card-img">
+                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
+                                    </div>
+                                    <div class="card-text">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
+                                        <h4>Ivan Wahyu Anggara</h4>
+                                        <h5>Software Engineer</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
+                                    <div class="card-img">
+                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
+                                    </div>
+                                    <div class="card-text">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
+                                        <h4>Ivan Wahyu Anggara</h4>
+                                        <h5>Software Engineer</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
+                                    <div class="card-img">
+                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
+                                    </div>
+                                    <div class="card-text">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
+                                        <h4>Ivan Wahyu Anggara</h4>
+                                        <h5>Software Engineer</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
+                                    <div class="card-img">
+                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
+                                    </div>
+                                    <div class="card-text">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
+                                        <h4>Ivan Wahyu Anggara</h4>
+                                        <h5>Software Engineer</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card border-0 shadow">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
+                                    <div class="card-img">
+                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
+                                    </div>
+                                    <div class="card-text">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
+                                        <h4>Ivan Wahyu Anggara</h4>
+                                        <h5>Software Engineer</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card border-0 shadow">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
+                                    <div class="card-img">
+                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
+                                    </div>
+                                    <div class="card-text">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
+                                        <h4>Ivan Wahyu Anggara</h4>
+                                        <h5>Software Engineer</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
     
                     </div>
                 </div>

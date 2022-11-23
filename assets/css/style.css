@@ -75,8 +75,8 @@ html{
 }
 .logo{
     font-weight: 700;
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 28px;
+    line-height: 42px;
     color: var(--green);
 }
 .logo .sub-logo{
@@ -103,8 +103,8 @@ html{
     position: relative;
     color: var(--white);
     font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 16px;
+    line-height: 24px;
     margin-left: 30px;
 }
 .active:before{
@@ -148,10 +148,10 @@ html{
     background: var(--white);
     color: var(--green);
     text-decoration: none;
-    padding: 10px 12px;
+    padding: 10px 16px;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 16px;
+    line-height: 24px;
     border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
@@ -160,42 +160,49 @@ html{
     /* border: 2px solid var(--green); */
     margin-left: 40px;
 }
+
 footer {
     background: var(--black);
 }
 footer .footer{
     padding: 48px 0;
 }
+footer .logo{
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 57px;
+    color: var(--green);
+}
 footer .desc-footer{
     color: var(--white);
     font-weight: 300;
-    font-size: 18px;
-    line-height: 31px;
+    font-size: 16px;
+    line-height: 24px;
     margin-top: 16px;
-    width: 80%;
+    width: 75%;
 }
 footer .footer .sub-footer{
     color: var(--white);
 }
 footer .footer .sub-footer h1{
     font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 28px;
+    line-height: 42px;
     margin-bottom: 16px;
     padding-top: 12px;
 }
 footer .footer .sub-footer p{
     font-weight: 300;
-    font-size: 18px;
-    line-height: 31px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px;
 }
 footer .footer .sub-footer a{
     text-decoration: none;
     color: var(--white);
     font-weight: 300;
-    font-size: 18px;
-    line-height: 31px;
+    font-size: 16px;
+    line-height: 24px;
     margin-bottom: 8px;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -209,7 +216,7 @@ footer .footer .sub-footer a:hover{
 .copyright{
     color: var(--white);
     font-weight: 300;
-    font-size: 18px;
-    line-height: 31px;
+    font-size: 16px;
+    line-height: 24px;
     margin-top: 45px;
 }
