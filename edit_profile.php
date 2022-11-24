@@ -19,23 +19,27 @@
                 </div>
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6">
                 <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div class="mb-3 form-profile">
+                        <label for="exampleInputEmail1" class="form-label label-profile">Avatar</label>
+                        <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div class="mb-3 form-profile">
+                        <label for="exampleInputEmail1" class="form-label label-profile">Name</label>
+                        <h6>Ivan Wahyu Anggara</h6>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div class="mb-3 form-profile">
+                        <label for="exampleInputEmail1" class="form-label label-profile">Username</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="ivan123" aria-describedby="emailHelp">
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    <div class="mb-3 form-profile">
+                        <label for="exampleInputEmail1" class="form-label label-profile">Email address</label>
+                        <h6>ivanwanggara30@gmail.com</h6>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3 form-profile">
+                        <label for="exampleInputEmail1" class="form-label label-profile">Occupation</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="Software Engineer" aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Edit</button>
                     </form>
                 </div>
             </div>

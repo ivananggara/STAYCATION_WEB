@@ -1,9 +1,9 @@
-#my-profile{
+#transaction{
     padding-top: 120px;
     min-height: 600px;
     margin-bottom: 120px ;
 }
-#my-profile h1{
+#transaction h1{
     text-transform: capitalize;
     font-weight: 700;
     font-size: 38px;
@@ -15,25 +15,25 @@
 .sub-title{
     color: var(--black);
 }
-#my-profile .card{
+#transaction .card{
     padding: 16px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-#my-profile .card .card-body h2{
+#transaction .card .card-body h2{
     font-weight: 700;
     font-size: 28px;
     line-height: 42px;
     color: var(--black);
 }
-#my-profile .card .card-body p{
+#transaction .card .card-body p{
     font-weight: 700;
     font-size: 21px;
     line-height: 32px;
     color: var(--black50);
-    margin: 8px 0 56px 0;
+    margin: 8px 0 70px 0;
 }
-.btn-green{
-    width: 100%;
+#transaction .btn-green{
+    width: 40%;
     background-color: #00ae51d5;
     text-align: center;
     padding: 12px;
@@ -48,10 +48,10 @@
     -ms-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
 }
-.btn-green:hover{
+#transaction .btn-green:hover{
     background-color: var(--green);
 }
-#my-profile .card .card-body .btn-green a{
+#transaction .card .card-body .btn-green a{
     text-decoration: none;
     color: var(--white);
     padding: 12px 15%;
@@ -65,30 +65,30 @@
     -o-border-radius: 10px;
 }
 
-#edit-profile{
+#transaction-detail{
     padding-top: 120px;
     min-height: 600px;
     margin-bottom: 120px ;
 }
-#edit-profile h1{
+#transaction-detail h1{
     text-transform: capitalize;
     font-weight: 700;
     font-size: 38px;
     line-height: 57px;
     color: var(--green);
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
-/* #edit-profile .form-profile{
-    margin-bottom: 24px;
-} */
-#edit-profile .form-profile .label-profile{
+.sub-title{
+    color: var(--black);
+}
+#transaction-detail .form-profile .label-profile{
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     color: var(--black);
 }
-#edit-profile .form-profile h6{
+#transaction-detail .form-profile h6{
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -97,16 +97,15 @@
     margin-bottom: 26px;
     margin-left: 10px;
 }
-#edit-profile .form-profile input{
+#transaction-detail .form-profile input{
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     color: var(--black50);
     margin-top: 5px;
     margin-bottom: 26px;
-    padding: 8px 10px;
 }
-#edit-profile .btn-primary{
+#transaction-detail .btn-primary{
     background-color: var(--green);
     margin-top: 30px;
     padding: 12px 8%;
@@ -115,7 +114,7 @@
     line-height: 24px;
     color: var(--white);
 }
-#edit-profile .img-edit img{
+#transaction-detail .img-edit img{
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
