@@ -19,8 +19,8 @@
     <section id="hero">
         <div class="container">
             <div class="title text-center">
-                <h1>Nusa Dua</h1>
-                <p>Bali, Denpasar</p>
+                <h1>nusa dua</h1>
+                <p><span>bali</span>, <span>denpasar</span></p>
             </div>
             <div class="row h-100" >
                 <div class="col-12 col-md-6 col-lg-6 col-sm-12 m-md-4 m-lg-4">
@@ -54,69 +54,117 @@
                     <div class="owl-carousel owl-des owl-theme">
                         <div class="item">
                             <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                                <div class="flip">
+                                    <div class="card-front">
+                                    <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                     </div>
+                                    <div class="card-back d-flex justify-content-center align-items-center">
+                                        <div class="btn-scd"><a href="detail_hotels.php">See More</a></div>
+                                    </div>
+                                </div>
+                                <div class="card-title">
+                                    <h4>Villa Real</h4>
+                                    <p>5<span> km</span></p>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="flip">
+                                    <div class="card-front">
+                                    <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                     </div>
+                                    <div class="card-back d-flex justify-content-center align-items-center">
+                                        <div class="btn-scd"><a href="detail_hotels.php">See More</a></div>
+                                    </div>
+                                </div>
+                                <div class="card-title">
+                                    <h4>Villa Real</h4>
+                                    <p>5<span> km</span></p>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="flip">
+                                    <div class="card-front">
+                                    <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                     </div>
+                                    <div class="card-back d-flex justify-content-center align-items-center">
+                                        <div class="btn-scd"><a href="detail_hotels.php">See More</a></div>
+                                    </div>
+                                </div>
+                                <div class="card-title">
+                                    <h4>Villa Real</h4>
+                                    <p>5<span> km</span></p>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card ">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="flip">
+                                    <div class="card-front">
+                                    <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                     </div>
+                                    <div class="card-back d-flex justify-content-center align-items-center">
+                                        <div class="btn-scd"><a href="detail_hotels.php">See More</a></div>
+                                    </div>
+                                </div>
+                                <div class="card-title">
+                                    <h4>Villa Real</h4>
+                                    <p>5<span> km</span></p>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card border-0 shadow">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="flip">
+                                    <div class="card-front">
+                                    <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                     </div>
+                                    <div class="card-back d-flex justify-content-center align-items-center">
+                                        <div class="btn-scd"><a href="detail_hotels.php">See More</a></div>
+                                    </div>
+                                </div>
+                                <div class="card-title">
+                                    <h4>Villa Real</h4>
+                                    <p>5<span> km</span></p>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="card border-0 shadow">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <div class="card-title text-center">
-                                        <h4>Owl Carousel</h4>
+                            <div class="card">
+                                <div class="flip">
+                                    <div class="card-front">
+                                    <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
                                     </div>
+                                    <div class="card-back d-flex justify-content-center align-items-center">
+                                        <div class="btn-scd"><a href="detail_hotels.php">See More</a></div>
+                                    </div>
+                                </div>
+                                <div class="card-title">
+                                    <h4>Villa Real</h4>
+                                    <p>5<span> km</span></p>
                                 </div>
                             </div>
                         </div>
+                        
     
                     </div>
                 </div>
             </div>
             </div>
+        </div>
+    </section>
+
+    <section id="add-story">
+        <div class="container">
+        <h1><span class="sub-title">Share </span> Story</h1>
+        <p>Add your story here</p>
+        <form action="">
+            <textarea name="story" id="" cols="30" rows="10" placeholder="put your story here"></textarea>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
         </div>
     </section>
     <?php 

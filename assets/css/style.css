@@ -160,7 +160,10 @@ html{
     /* border: 2px solid var(--green); */
     margin-left: 40px;
 }
-
+.navbar-nav .btn-search{
+    background: transparent;
+    border: none;
+}
 footer {
     background: var(--black);
 }
@@ -219,4 +222,20 @@ footer .footer .sub-footer a:hover{
     font-size: 16px;
     line-height: 24px;
     margin-top: 45px;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color:#00ae51d5 ;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--green);
 }

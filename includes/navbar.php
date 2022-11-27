@@ -11,9 +11,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row align-items-center">
-                <li class="search-icon d-flex flex-row justify-content-between align-items-center">
-                    <input class="bg-transparent" type="text" placeholder="search by city">
-                    <a href="search.php"><img src="assets/img/search-btn.svg" alt=""></a>
+                <li class="nav-item">
+                    <form action="" class="search-icon d-flex flex-row justify-content-between align-items-center">
+                        <input class="bg-transparent" type="text" placeholder="search by city" name="search">
+                        <button type="submit" class="btn-search"><img src="assets/img/search-btn.svg" alt=""></button>
+                    </form>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?= strcmp($now, 'index') == 0 ? ' active' : '' ?>" href="index.php">Home</a>

@@ -25,11 +25,11 @@
                             <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="please input your username here">
                         </div>
                         <div class="mb-3 form-profile">
-                            <label for="exampleInputEmail1" class="form-label label-profile">Avatar</label>
+                            <label for="exampleInputEmail1" class="form-label label-profile">Email</label>
                             <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="please input your email here">
                         </div>
                         <div class="mb-3 form-profile">
-                            <label for="exampleInputEmail1" class="form-label label-profile">Username</label>
+                            <label for="exampleInputEmail1" class="form-label label-profile">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="please input your password here"aria-describedby="emailHelp">
                         </div>
                         <button type="submit" class="btn btn-primary">Continue</button>

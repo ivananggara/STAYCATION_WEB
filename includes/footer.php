@@ -12,7 +12,7 @@
             </div>
             <div class="col-12 col-md-4 col-lg-4 col-sm-12 sub-footer">
                 <h1>Explore Us</h1>
-                <a href="#">About</a>
+                <a href="about.php">About</a>
             </div>
             <div class="copyright d-flex justify-content-center align-items-center">
         <h3>Copyright • All rights reserved • Staycation 2022</h3>

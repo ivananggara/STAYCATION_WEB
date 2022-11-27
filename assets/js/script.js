@@ -61,3 +61,5 @@ $('.owl-des').owlCarousel({
         }
     }
 })
+
+$('#check-in').datepicker();
