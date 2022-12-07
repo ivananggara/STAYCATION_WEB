@@ -107,6 +107,14 @@ html{
     line-height: 24px;
     margin-left: 30px;
 }
+.navbar-nav .nav-item .nav-link:nth-child(2){
+    position: relative;
+    color: rgb(255, 119, 0);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 30px;
+}
 .active:before{
     content: "";
     position: absolute;
@@ -141,7 +149,29 @@ html{
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+.navbar-nav .nav-item .nav-link:nth-child(2):after{
+    content: "";
+    position: absolute;
+    background:rgb(255, 119, 0);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
 .navbar-nav .nav-item .nav-link:hover:after{
+    width: 100%;
+}
+.navbar-nav .nav-item .nav-link:nth-child(2):hover:after{
     width: 100%;
 }
 .navbar-nav .nav-item-sign .nav-link-sign{

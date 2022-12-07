@@ -141,6 +141,7 @@
     font-size: 21px;
     line-height: 32px;
     color: var(--black);
+    text-transform: capitalize;
 }
 #nearest-hotels .card .card-title p{
     font-weight: 300;

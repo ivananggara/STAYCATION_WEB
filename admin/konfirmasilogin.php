@@ -28,7 +28,7 @@
                 $_SESSION['id_user']=$id_user;
                 $_SESSION['level']=$level;
                 if($_SESSION['level']=="konsumen"){
-                    header("Location:home.php?id_user=$id_user");
+                    header("Location:home.php");
                 }else{
                     header("Location:profil.php");
                 }

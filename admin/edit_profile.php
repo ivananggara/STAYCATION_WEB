@@ -1,3 +1,17 @@
+<?php
+    session_start();
+    include("../koneksi/koneksi.php");
+    $id_user = $_SESSION['id_user'];
+    $sql_u = "SELECT `nama`, `username`, `email`, `pekerjaan`, `foto_profil` FROM `user` WHERE `id_user`='$id_user'";
+    $query_u = mysqli_query($koneksi, $sql_u);
+    while($data_u = mysqli_fetch_row($query_u)){
+        $nama = $data_u[0];
+        $username = $data_u[1];
+        $email = $data_u[2];
+        $pekerjaan = $data_u[3];
+        $foto_profil = $data_u[4];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -14,30 +28,30 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6">
                     <div class="img-edit px-5">
-                        <img src="assets/img/customer-pict.svg" alt="">
+                        <img src="assets/img/<?php echo $foto_profil; ?>" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6">
-                <form>
+                <form action="konfirmasieditprofileuser.php" method="post" enctype="multipart/form">
                     <div class="mb-3 form-profile">
                         <label for="exampleInputEmail1" class="form-label label-profile">Avatar</label>
                         <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3 form-profile">
                         <label for="exampleInputEmail1" class="form-label label-profile">Name</label>
-                        <h6>Ivan Wahyu Anggara</h6>
+                        <h6><?php echo $nama; ?></h6>
                     </div>
                     <div class="mb-3 form-profile">
                         <label for="exampleInputEmail1" class="form-label label-profile">Username</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="ivan123" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $username; ?>" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3 form-profile">
                         <label for="exampleInputEmail1" class="form-label label-profile">Email address</label>
-                        <h6>ivanwanggara30@gmail.com</h6>
+                        <h6><?php echo $email; ?></h6>
                     </div>
                     <div class="mb-3 form-profile">
                         <label for="exampleInputEmail1" class="form-label label-profile">Occupation</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="Software Engineer" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $pekerjaan; ?>" aria-describedby="emailHelp">
                     </div>
                     <button type="submit" class="btn btn-primary">Save Edit</button>
                     </form>

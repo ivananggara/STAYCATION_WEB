@@ -96,6 +96,7 @@
     margin-top: 5px;
     margin-bottom: 26px;
     margin-left: 10px;
+    text-transform: capitalize;
 }
 #edit-profile .form-profile input{
     font-weight: 500;

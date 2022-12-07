@@ -21,13 +21,18 @@
                 <li class="nav-item">
                     <a class="nav-link <?= strcmp($now, 'home') == 0 ? ' active' : '' ?>" href="home.php">Home</a>
                 </li>
-                <?php
-                    if(isset($_SESSION['id_user'])){
-                        if($_SESSION['id_user']==true){?>
+                <li class="nav-item"><a class="nav-link <?= strcmp($now, 'profile') == 0 ? ' active' : '' ?>" href="profile.php">My Profile</a></li>
+                <li class="nav-item"><a class="nav-link signout" href="signout.php">Sign Out</a></li>
+                <li class="nav-item-sign"><a class="nav-link-sign" href="index.php">SignIn/SignUp</a></li>
+                <!-- <?php
+                    if(isset($_GET['id_user'])){
+                        $id_user = $_GET['id_user'];
+                        if($_SESSION['id_user']==$id_user){?>
                             <li class="nav-item"><a class="nav-link <?= strcmp($now, 'profile') == 0 ? ' active' : '' ?>" href="profile.php">My Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href="signout.php">Sign Out</a></li>
                         <?php } else{?>
                             <li class="nav-item-sign"><a class="nav-link-sign" href="index.php">SignIn/SignUp</a></li>
-                        <?php }}?>
+                        <?php }}?> -->
             </ul>
             </div>
     </div>

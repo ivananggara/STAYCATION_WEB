@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row align-items-center">
                 <li class="nav-item">
-                    <form action="" class="search-icon d-flex flex-row justify-content-between align-items-center">
+                    <form action="konfirmasisearchuserpage.php" method="get" class="search-icon d-flex flex-row justify-content-between align-items-center">
                         <input class="bg-transparent" type="text" placeholder="search by city" name="search">
                         <button type="submit" class="btn-search"><img src="assets/img/search-btn.svg" alt=""></button>
                     </form>
@@ -21,13 +21,19 @@
                 <li class="nav-item">
                     <a class="nav-link <?= strcmp($now, 'home') == 0 ? ' active' : '' ?>" href="home.php">Home</a>
                 </li>
-                <?php
-                    if(isset($_SESSION['level'])){
-                        if($_SESSION['level']=="konsumen"){?>
+                <li class="nav-item"><a class="nav-link <?= strcmp($now, 'profile') == 0 ? ' active' : '' ?>" href="profile.php">My Profile</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: var(--green)" href="signout.php">Sign Out</a></li>
+                <li class="nav-item-sign"><a class="nav-link-sign" href="index.php">SignIn/SignUp</a></li>
+                       
+                <!-- <?php
+                    if(isset($_GET['id_user'])){
+                        $id_user = $_GET['id_user'];
+                        if($_SESSION['id_user']==$id_user){?>
                             <li class="nav-item"><a class="nav-link <?= strcmp($now, 'profile') == 0 ? ' active' : '' ?>" href="profile.php">My Profile</a></li>
-                        <?php } else if($_SESSION['level']/="konsumen"){?>
+                            <li class="nav-item"><a class="nav-link" href="signout.php">Sign Out</a></li>
+                        <?php } else{?>
                             <li class="nav-item-sign"><a class="nav-link-sign" href="index.php">SignIn/SignUp</a></li>
-                        <?php }}?>
+                        <?php }}?> -->
             </ul>
             </div>
     </div>

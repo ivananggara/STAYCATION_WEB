@@ -24,17 +24,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                <div class="card m-4">
-                    <div class="card-body">
-                        <h2>Hotel Name</h2>
-                        <p>Date</p>
-                        <div class="btn-green">
-                            <a href="transaction_detail.php">Show More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         </div>
     </section>

@@ -78,7 +78,7 @@ include("../koneksi/koneksi.php");
           <div class="form-group row">
             <label for="deskripsi_wisata" class="col-sm-3 col-form-label">Deksripsi Wisata</label>
             <div class="col-sm-7">
-              <textarea class="form-control" name="deskripsi_wisata" rows="12">Lorem Ipsum</textarea>
+              <textarea class="form-control" name="deskripsi_wisata" rows="12"></textarea>
             </div>
           </div>
           <div class="form-group row">

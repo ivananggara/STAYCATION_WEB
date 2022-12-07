@@ -105,7 +105,7 @@
     margin-top: 5px;
     margin-bottom: 26px;
 }
-#transaction-detail .btn-primary{
+/* #transaction-detail .btn-primary{
     background-color: var(--green);
     margin-top: 30px;
     padding: 12px 8%;
@@ -113,7 +113,7 @@
     font-size: 16px;
     line-height: 24px;
     color: var(--white);
-}
+} */
 #transaction-detail .img-edit img{
     border-radius: 50%;
     -webkit-border-radius: 50%;

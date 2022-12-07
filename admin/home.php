@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../koneksi/koneksi.php');
+include("../koneksi/koneksi.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,116 +32,36 @@ include('../koneksi/koneksi.php');
             <div class="row">
                 <div class="col-12 m-auto">
                     <div class="owl-carousel owl-one owl-theme">
-                        <div class="item">
-                            <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4>nusa dua</h4>
-                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
-                                        <h2>bali, <span>denpasar</span></h2>
-                                        <div class="rate ">
-                                            <img src="" alt="">
-                                            <h6>4.8</h6>
+                        <?php
+                            $sql_w = "SELECT `id_wisata`, `wisata`, `provinsi`, `kota`, `rating_wisata`, `gambar_wisata1` FROM `wisata` ORDER BY `rating_wisata` DESC";
+                            $query_w = mysqli_query($koneksi, $sql_w);
+                            while($data_w = mysqli_fetch_row($query_w)){
+                                    $id_wisata = $data_w[0];
+                                    $wisata = $data_w[1];
+                                    $provinsi = $data_w[2];
+                                    $kota = $data_w[3];
+                                    $rating_wisata = $data_w[4];
+                                    $gambar_wisata1 = $data_w[5];
+                                ?>
+                                <div class="item">
+                                <div class="card">
+                                    <img src="assets/img/<?php echo $gambar_wisata1; ?>" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <h4><?php echo $wisata; ?></h4>
+                                        <div class="text d-flex flex-row justify-content-between align-items-center w-100">
+                                            <h2><?php echo $provinsi; ?>, <span><?php echo $kota; ?></span></h2>
+                                            <div class="rate d-flex flex-row gap-2 ">
+                                                <img src="assets/img/star.svg" alt="">
+                                                <h6><?php echo $rating_wisata; ?></h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="btn-green">
-                                        <a href="detail_destinasi.php">Click here</a>
+                                        <div class="btn-green">
+                                            <a href="detail_destinasi.php?data=<?php echo $id_wisata;?>">Click here</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4>nusa dua</h4>
-                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
-                                        <h2>bali, <span>denpasar</span></h2>
-                                        <div class="rate ">
-                                            <img src="" alt="">
-                                            <h6>4.8</h6>
-                                        </div>
-                                    </div>
-                                    <div class="btn-green">
-                                        <a href="detail_destinasi.php">Click here</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4>nusa dua</h4>
-                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
-                                        <h2>bali, <span>denpasar</span></h2>
-                                        <div class="rate ">
-                                            <img src="" alt="">
-                                            <h6>4.8</h6>
-                                        </div>
-                                    </div>
-                                    <div class="btn-green">
-                                        <a href="detail_destinasi.php">Click here</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4>nusa dua</h4>
-                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
-                                        <h2>bali, <span>denpasar</span></h2>
-                                        <div class="rate ">
-                                            <img src="" alt="">
-                                            <h6>4.8</h6>
-                                        </div>
-                                    </div>
-                                    <div class="btn-green">
-                                        <a href="detail_destinasi.php">Click here</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4>nusa dua</h4>
-                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
-                                        <h2>bali, <span>denpasar</span></h2>
-                                        <div class="rate ">
-                                            <img src="" alt="">
-                                            <h6>4.8</h6>
-                                        </div>
-                                    </div>
-                                    <div class="btn-green">
-                                        <a href="detail_destinasi.php">Click here</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <img src="assets/img/card-hotel.svg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4>nusa dua</h4>
-                                    <div class="text d-flex flex-row justify-content-between align-items-center w-100">
-                                        <h2>bali, <span>denpasar</span></h2>
-                                        <div class="rate ">
-                                            <img src="" alt="">
-                                            <h6>4.8</h6>
-                                        </div>
-                                    </div>
-                                    <div class="btn-green">
-                                        <a href="detail_destinasi.php">Click here</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
+                           <?php }?>
                     </div>
                 </div>
             </div>
@@ -156,90 +76,32 @@ include('../koneksi/koneksi.php');
             <div class="row">
                 <div class="col-12 m-auto">
                     <div class="owl-carousel owl-two owl-theme">
+                    <?php
+                        $sql_c="select `c`.`id_cerita`, `c`.`cerita`, `u`.`nama`, `u`.`pekerjaan`, `u`.`foto_profil` from `cerita` `c` INNER JOIN `user` `u` ON `c`.`id_user` = `u`.`id_user`";
+                        $query_c = mysqli_query($koneksi, $sql_c);
+                        while($data_c = mysqli_fetch_row($query_c)){
+                          $id_cerita = $data_c[0];
+                          $cerita = $data_c[1];
+                          $nama = $data_c[2];
+                          $pekerjaan = $data_c[3];
+                          $foto_profil = $data_c[4];
+                      ?>
                         <div class="item">
                             <div class="card">
                                 <div class="card-body d-flex flex-row align-items-center justify-content-center">
-                                    <div class="card-img">
-                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
+                                    <div class="card-img " style="width: 40%;">
+                                        <img src="assets/img/<?php echo $foto_profil;?>" alt="profil" style="width: 450px;" class="">
                                     </div>
-                                    <div class="card-text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
-                                        <h4>Ivan Wahyu Anggara</h4>
-                                        <h5>Software Engineer</h5>
+                                    <div class="card-text"  style="width: 60%;">
+                                        <p><?php echo $cerita;?></p>
+                                        <h4><?php echo $nama;?></h4>
+                                        <h5><?php echo $pekerjaan;?></h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
-                                    <div class="card-img">
-                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
-                                    </div>
-                                    <div class="card-text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
-                                        <h4>Ivan Wahyu Anggara</h4>
-                                        <h5>Software Engineer</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
-                                    <div class="card-img">
-                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
-                                    </div>
-                                    <div class="card-text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
-                                        <h4>Ivan Wahyu Anggara</h4>
-                                        <h5>Software Engineer</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
-                                    <div class="card-img">
-                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
-                                    </div>
-                                    <div class="card-text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
-                                        <h4>Ivan Wahyu Anggara</h4>
-                                        <h5>Software Engineer</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
-                                    <div class="card-img">
-                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
-                                    </div>
-                                    <div class="card-text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
-                                        <h4>Ivan Wahyu Anggara</h4>
-                                        <h5>Software Engineer</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="card-body d-flex flex-row align-items-center justify-content-center">
-                                    <div class="card-img">
-                                        <img src="assets/img/customer-pict.svg" alt="" class="card-img-top">
-                                    </div>
-                                    <div class="card-text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores at, facilis est ea sapiente rerum maiores provident quibusdam perspiciatis vel.</p>
-                                        <h4>Ivan Wahyu Anggara</h4>
-                                        <h5>Software Engineer</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php }?>
+                        
                         
     
                     </div>
