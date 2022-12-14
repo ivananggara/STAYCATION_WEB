@@ -121,3 +121,53 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+
+#success{
+    margin: 6% 0;
+}
+#success .card{
+    padding: 50px;
+    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+#success .card h1{
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 57px;
+    color: var(--black);
+    margin-bottom: 12px;
+}
+#success .card h2{
+    width: 30%;
+    text-align: center;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 32px;
+    color: var(--black25);
+    margin-bottom: 60px
+}
+#success .card img{
+    margin-bottom: 60px;
+}
+#success .card a{
+    border-radius:10px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    background-color: #00ae51d5;
+    padding: 1.5% 12%;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+#success .card a:hover{
+    background-color: var(--green);
+}

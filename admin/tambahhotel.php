@@ -1,3 +1,7 @@
+<?php 
+  include("../koneksi/koneksi.php");
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,20 +46,15 @@
       <!-- /.card-header -->
       <!-- form start -->
       </br></br>
-      <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf data wajib di isi</div>
-      </div>
-      <form class="form-horizontal">
+      <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
+        <?php if($_GET['notif']=="tambahkosong"){?>
+            <div class="alert alert-danger" role="alert">Maaf data 
+            <?php echo $_GET['jenis'];?> wajib di isi</div>
+        <?php }?>
+      <?php }?>
+      <form class="form-horizontal" action="konfirmasitambahhotel.php" method="post" enctype="multipart/form">
         <div class="card-body">
-          <div class="form-group row">
-            <label for="gambar_hotel" class="col-sm-3 col-form-label">Gambar Hotel </label>
-            <div class="col-sm-7">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" name="gambar_hotel" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose file</label>
-              </div>  
-            </div>
-          </div>
+          
           <div class="form-group row">
             <label for="hotel" class="col-sm-3 col-form-label">Nama Hotel</label>
             <div class="col-sm-7">
@@ -63,22 +62,38 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="id_user" class="col-sm-3 col-form-label">ID User</label>
+            <label for="id_user" class="col-sm-3 col-form-label">Admin</label>
             <div class="col-sm-7">
-              <select class="form-control" id="id_user">
-                <option value="0">- Pilih ID User -</option>
-                <option value="Website">Website</option>
-                <option value="Mobile">Mobile</option>
+              <select class="form-control" id="user" name="user">
+                <option value="0">Pilih Admin</option>
+                <?php 
+                  $sql_u = "SELECT `id_user`, `nama` FROM `user` WHERE `level`= 'admin'";
+                  $query_u = mysqli_query($koneksi, $sql_u);
+                  while($data_u = mysqli_fetch_row($query_u)){
+                    $id_user = $data_u[0];
+                    $nama = $data_u[1];
+                    ?>
+                    <option value="<?php echo $id_user; ?>"><?php echo $nama; ?></option>
+                  <?php }
+                ?>
               </select>
             </div>
           </div>
           <div class="form-group row">
             <label for="wisata" class="col-sm-3 col-form-label">Wisata</label>
             <div class="col-sm-7">
-              <select class="form-control" id="wisata">
-                <option value="0">- Pilih Wisata -</option>
-                <option value="Website">Website</option>
-                <option value="Mobile">Mobile</option>
+            <select class="form-control" id="wisata" name="wisata">
+                <option value="0">Pilih Wisata</option>
+                <?php 
+                  $sql_w = "SELECT `id_wisata`, `wisata` FROM `wisata`";
+                  $query_w = mysqli_query($koneksi, $sql_w);
+                  while($data_w = mysqli_fetch_row($query_w)){
+                    $id_wisata = $data_w[0];
+                    $wisata = $data_w[1];
+                    ?>
+                    <option value="<?php echo $id_wisata; ?>"><?php echo $wisata; ?></option>
+                  <?php }
+                ?>
               </select>
             </div>
           </div>
@@ -109,13 +124,22 @@
           <div class="form-group row">
             <label for="fasilitas" class="col-sm-3 col-form-label">Fasilitas</label>
             <div class="col-sm-7">
-              <textarea class="form-control" name="fasilitas" id="editor1" rows="12">Lorem Ipsum</textarea>
+              <textarea class="form-control" name="fasilitas" id="" rows="12"></textarea>
             </div>
           </div>
           <div class="form-group row">
             <label for="deskripsi_hotel" class="col-sm-3 col-form-label">Deksripsi Hotel</label>
             <div class="col-sm-7">
-              <textarea class="form-control" name="deskripsi_hotel" id="editor1" rows="12">Lorem Ipsum</textarea>
+              <textarea class="form-control" name="deskripsi_hotel" id="" rows="12"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="gambar_hotel" class="col-sm-3 col-form-label">Gambar Hotel </label>
+            <div class="col-sm-7">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="gambar_hotel" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+              </div>  
             </div>
           </div>
           <div class="form-group row">

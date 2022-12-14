@@ -1,3 +1,7 @@
+<?php 
+ include("../koneksi/koneksi.php");
+ session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,25 +63,37 @@
                     <thead>                  
                       <tr style="background-color: #E9E9E9;">
                         <th width="5%">No</th>
-                        <th width="20%">Nama Hotel</th>
-                        <th width="20%">Jenis Kamar</th>
-                        <th width="20%">Harga</th>
-                        <th width="20%">Jumlah Kamar</th>
+                        <th width="30%">Jenis Kamar</th>
+                        <th width="25%">Harga</th>
+                        <th width="25%">Jumlah Kamar</th>
                         <th width="15%"><center>Aksi</center></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1.</td>
-                        <td>Villa Real</td>
-                        <td>Luxury</td>
-                        <td>2000000</td>
-                        <td>30</td>
+                      <?php
+                      $id_user = $_SESSION['id_user'];
+                      $sql = "SELECT `id_jenis_kamar`, `jenis_kamar`, `harga_kamar`, `jumlah_kamar` FROM `jenis_kamar` WHERE `id_user` = '$id_user' ORDER BY `harga_kamar` ASC";
+                      $query = mysqli_query($koneksi, $sql);
+                      $no = 1;
+                      while($data = mysqli_fetch_row($query)){
+                        $id_jenis_kamar = $data[0];
+                        $jenis_kamar = $data[1];
+                        $harga_kamar = $data[2];
+                        $jumlah_kamar = $data[3];
+                        $_SESSION['id_jenis_kamar'] = $jenis_kamar;
+                        ?>
+                        <tr>
+                        <td><?php echo $no ; ?></td>
+                        <td><?php echo $jenis_kamar ; ?></td>
+                        <td><?php echo $harga_kamar ; ?></td>
+                        <td><?php echo $jumlah_kamar ; ?></td>
                         <td align="center">
-                          <a href="editjeniskamar.php" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                          <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
+                        <a href="editjeniskamar.php?data=<?php echo $id_jenis_kamar; ?>" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
+                        <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $jenis_kamar; ?>?'))window.location.href = 'jeniskamar.php?aksi=hapus&data=<?php echo $id_jenis_kamar;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
                         </td>
                       </tr>
+                      <?php }?>
+                      
                     </tbody>
                   </table>  
               </div>

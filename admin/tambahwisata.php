@@ -46,9 +46,12 @@ include("../koneksi/koneksi.php");
       <!-- /.card-header -->
       <!-- form start -->
       </br></br>
-      <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf data wajib di isi</div>
-      </div>
+      <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
+        <?php if($_GET['notif']=="tambahkosong"){?>
+            <div class="alert alert-danger" role="alert">Maaf data 
+            <?php echo $_GET['jenis'];?> wajib di isi</div>
+        <?php }?>
+      <?php }?>
       <form class="form-horizontal" method="post" action="konfirmasitambahwisata.php" enctype="multipart/form-data">
         <div class="card-body">
           <div class="form-group row">

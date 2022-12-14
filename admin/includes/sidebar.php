@@ -88,7 +88,7 @@
           <?php 
           if ($_SESSION['level']=="Superadmin"){?>
           <li class="nav-item">
-            <a href="index.php?include=user" class="nav-link">
+            <a href="pengaturanuser.php" class="nav-link">
               <i class="nav-icon fas fa-user-cog"></i>
               <p>
                 Pengaturan User

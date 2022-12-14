@@ -45,7 +45,7 @@ include('../koneksi/koneksi.php');
               <!-- /.card-header -->
               <div class="card-body">
               <div class="col-md-12">
-                  <form method="" action="">
+                  <form method="get" action="wisata.php">
                     <div class="row">
                         <div class="col-md-4 bottom-10">
                           <input type="text" class="form-control" id="kata_kunci" name="katakunci">
@@ -81,7 +81,11 @@ include('../koneksi/koneksi.php');
                     <tbody>
                       <?php
                         $sql_w="select `id_wisata`, `wisata`,`provinsi`, `kota`, `deskripsi_wisata` from `wisata` ";
-                        //echo $sql;
+                        if (isset($_GET["katakunci"])){
+                          $katakunci_wisata = $_GET["katakunci"];
+                          $sql_w .= " where `wisata` LIKE '%$katakunci_wisata%'";
+                          }
+                          $sql_w .= " ORDER BY `wisata`";
                        $query_w = mysqli_query($koneksi, $sql_w);
                        $no = 1;
                        while($data_w = mysqli_fetch_row($query_w)){

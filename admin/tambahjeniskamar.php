@@ -1,3 +1,8 @@
+<?php
+ include("../koneksi/koneksi.php");
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,18 +50,8 @@
       <div class="col-sm-10">
           <div class="alert alert-danger" role="alert">Maaf data wajib di isi</div>
       </div>
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post" action="konfirmasitambahjeniskamar.php">
         <div class="card-body">
-        <div class="form-group row">
-            <label for="hotel" class="col-sm-3 col-form-label">Nama Hotel</label>
-            <div class="col-sm-7">
-              <select class="form-control" id="hotel">
-                <option value="0">- Pilih Hotel -</option>
-                <option value="Website">Website</option>
-                <option value="Mobile">Mobile</option>
-              </select>
-            </div>
-          </div>
           <div class="form-group row">
             <label for="jenis_kamar" class="col-sm-3 col-form-label">Jenis Kamar</label>
             <div class="col-sm-7">
@@ -66,7 +61,7 @@
           <div class="form-group row">
             <label for="harga" class="col-sm-3 col-form-label">Harga</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" name="harga" id="harga" value="">
+              <input type="text" class="form-control" name="harga_kamar" id="harga" value="">
             </div>
           </div>
           <div class="form-group row">

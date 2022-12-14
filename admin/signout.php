@@ -1,4 +1,4 @@
 <?php 
 session_unset();
-header("Location:home.php?logoutberhasil");
+header("Location:index.php?logoutberhasil");
 ?>

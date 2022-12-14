@@ -40,7 +40,7 @@ include('../koneksi/koneksi.php');
               <!-- /.card-header -->
               <div class="card-body">
               <div class="col-md-12">
-                  <form method="" action="">
+                  <form method="get" action="cerita.php">
                     <div class="row">
                         <div class="col-md-4 bottom-10">
                           <input type="text" class="form-control" id="kata_kunci" name="katakunci">
@@ -64,6 +64,10 @@ include('../koneksi/koneksi.php');
                     <tbody>
                       <?php
                         $sql_c="select `c`.`id_cerita`, `c`.`cerita`, `u`.`nama`, `u`.`pekerjaan` from `cerita` `c` INNER JOIN `user` `u` ON `c`.`id_user` = `u`.`id_user`";
+                        if (isset($_GET["katakunci"])){
+                          $katakunci_nama = $_GET["katakunci"];
+                          $sql_c .= " where `u`.`nama` LIKE '%$katakunci_nama%'";
+                        } 
                         $query_c = mysqli_query($koneksi, $sql_c);
                         $no = 1;
                         while($data_c = mysqli_fetch_row($query_c)){
