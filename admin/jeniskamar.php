@@ -1,6 +1,16 @@
 <?php 
  include("../koneksi/koneksi.php");
  session_start();
+ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
+	if($_GET['aksi']=='hapus'){
+		$id_jenis_kamar = $_GET['data'];
+		//hapus kategori buku
+		$sql_dh = "delete from `jenis_kamar` 
+		where `id_jenis_kamar` = '$id_jenis_kamar'";
+		mysqli_query($koneksi,$sql_dh);
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,10 +65,20 @@
                     </div><!-- .row -->
                   </form>
                 </div><br>
-              <div class="col-sm-12">
-                  <div class="alert alert-success" role="alert">Data Berhasil Ditambahkan</div>
-                  <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
-              </div>
+                <div class="col-sm-12">
+                  <?php if(!empty($_GET['notif'])){?>
+                    <?php if($_GET['notif']=="tambahberhasil"){?>
+                          <div class="alert alert-success" role="alert">
+                          Data Berhasil Ditambahkan</div>
+                    <?php } else if($_GET['notif']=="editberhasil"){?>
+                          <div class="alert alert-success" role="alert">
+                          Data Berhasil Diubah</div>
+                    <?php } else if($_GET['notif']=="hapusberhasil"){?>
+                          <div class="alert alert-success" role="alert">
+                          Data Berhasil Dihapus</div>
+                    <?php }?>
+                      <?php }?>
+                </div>
                   <table class="table table-bordered">
                     <thead>                  
                       <tr style="background-color: #E9E9E9;">
@@ -72,7 +92,12 @@
                     <tbody>
                       <?php
                       $id_user = $_SESSION['id_user'];
-                      $sql = "SELECT `id_jenis_kamar`, `jenis_kamar`, `harga_kamar`, `jumlah_kamar` FROM `jenis_kamar` WHERE `id_user` = '$id_user' ORDER BY `harga_kamar` ASC";
+                      $sql = "SELECT `id_jenis_kamar`, `jenis_kamar`, `harga_kamar`, `jumlah_kamar` FROM `jenis_kamar`  WHERE `id_user` = '$id_user'";
+                      if(isset($_GET["katakunci"])){
+                        $katakunci_jenis_kamar = $_GET["katakunci"];
+                        $sql .= " AND `jenis_kamar` LIKE '%$katakunci_jenis_kamar%'";
+                        }
+                        $sql .= " ORDER BY `jenis_kamar`";
                       $query = mysqli_query($koneksi, $sql);
                       $no = 1;
                       while($data = mysqli_fetch_row($query)){
@@ -92,7 +117,7 @@
                         <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $jenis_kamar; ?>?'))window.location.href = 'jeniskamar.php?aksi=hapus&data=<?php echo $id_jenis_kamar;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
                         </td>
                       </tr>
-                      <?php }?>
+                      <?php $no++; }?>
                       
                     </tbody>
                   </table>  

@@ -1,6 +1,15 @@
 <?php
 session_start();
 include('../koneksi/koneksi.php');
+if((isset($_GET['aksi']))&&(isset($_GET['data']))){
+	if($_GET['aksi']=='hapus'){
+		$id_cerita = $_GET['data'];
+		//hapus kategori buku
+		$sql_dh = "delete from `cerita` 
+		where `id_cerita` = '$id_cerita'";
+		mysqli_query($koneksi,$sql_dh);
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +60,13 @@ include('../koneksi/koneksi.php');
                     </div><!-- .row -->
                   </form>
                 </div><br>
+                <div class="col-sm-12">
+                  <?php if(!empty($_GET['notif'])){?>
+                    <?php if($_GET['notif']=="hapusberhasil"){?>
+                          <div class="alert alert-success" role="alert">
+                          Data Berhasil Dihapus</div>
+                    <?php }}?>
+                </div>
                   <table class="table table-bordered">
                     <thead>                  
                       <tr style="background-color: #E9E9E9;">
@@ -82,7 +98,7 @@ include('../koneksi/koneksi.php');
                         <td><?php echo $pekerjaan; ?></td>
                         <td><?php echo $cerita; ?></td>
                         <td align="center">
-                          <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
+                        <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $cerita; ?>?'))window.location.href = 'cerita.php?aksi=hapus&data=<?php echo $id_cerita;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
                         </td>
                       </tr>
                       <?php $no++; } ?>

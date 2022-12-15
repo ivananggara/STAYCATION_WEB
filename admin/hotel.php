@@ -72,7 +72,7 @@ include('../koneksi/koneksi.php');
                     </thead>
                     <tbody>
                     <?php
-                        $sql_h="select `h`.`id_hotel`,`h`.`hotel`,`h`.`deskripsi_hotel`, `w`.`wisata` FROM `hotel` `h` INNER JOIN `wisata` `w` ON `h`.`id_wisata` = `w`.`id_wisata` ORDER BY `hotel`";
+                        $sql_h="SELECT `h`.`id_hotel`,`h`.`hotel`,`h`.`deskripsi_hotel`, `w`.`wisata` FROM `hotel` `h` INNER JOIN `wisata` `w` ON `h`.`id_wisata` = `w`.`id_wisata` ORDER BY `hotel`";
                         //echo $sql;
                        $query_h = mysqli_query($koneksi, $sql_h);
                        $no = 1;

@@ -1,7 +1,15 @@
 <?php
 session_start();
 include('../koneksi/koneksi.php');
-
+if((isset($_GET['aksi']))&&(isset($_GET['data']))){
+	if($_GET['aksi']=='hapus'){
+		$id_wisata = $_GET['data'];
+		//hapus kategori buku
+		$sql_dh = "delete from `wisata` 
+		where `id_wisata` = '$id_wisata'";
+		mysqli_query($koneksi,$sql_dh);
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,15 +65,18 @@ include('../koneksi/koneksi.php');
                   </form>
                 </div><br>
                 <div class="col-sm-12">
-                    <?php if(!empty($_GET['notif'])){?>
-                        <?php if($_GET['notif']=="tambahberhasil"){?>
+                  <?php if(!empty($_GET['notif'])){?>
+                    <?php if($_GET['notif']=="tambahberhasil"){?>
                           <div class="alert alert-success" role="alert">
                           Data Berhasil Ditambahkan</div>
-                        <?php }else if($_GET['notif']=="editberhasil"){?>
+                    <?php } else if($_GET['notif']=="editberhasil"){?>
                           <div class="alert alert-success" role="alert">
                           Data Berhasil Diubah</div>
-                        <?php } ?>
+                    <?php } else if($_GET['notif']=="hapusberhasil"){?>
+                          <div class="alert alert-success" role="alert">
+                          Data Berhasil Dihapus</div>
                     <?php }?>
+                      <?php }?>
                 </div>
                   <table class="table table-bordered">
                     <thead>                  
