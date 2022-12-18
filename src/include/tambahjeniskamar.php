@@ -40,7 +40,7 @@
       <?php }?>
       <form class="form-horizontal" method="post" action="index.php?include=konfirmasi-tambah-jenis-kamar">
         <div class="card-body">
-        <div class="form-group row">
+        <!-- <div class="form-group row">
             <label for="hotel" class="col-sm-3 col-form-label">Hotel</label>
             <div class="col-sm-7">
               <select class="form-control" id="hotel" name="hotel">
@@ -57,7 +57,7 @@
                 ?>
               </select>
             </div>
-            </div>
+            </div> -->
           <div class="form-group row">
             <label for="jenis_kamar" class="col-sm-3 col-form-label">Jenis Kamar</label>
             <div class="col-sm-7">

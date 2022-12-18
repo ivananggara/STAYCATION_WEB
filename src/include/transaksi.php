@@ -1,5 +1,13 @@
 <?php
-
+    if(isset($_SESSION['id_user'])){
+      $id_user = $_SESSION['id_user'];
+      $sql = "SELECT `id_hotel` FROM `hotel` WHERE `id_user` = '$id_user'";
+      $query = mysqli_query($koneksi, $sql);
+      while($data = mysqli_fetch_row($query)){
+        $id_hotel = $data[0];
+        $_SESSION['id_hotel'] = $id_hotel;
+      }
+    }
     if((isset($_GET['aksi']))&&(isset($_GET['data']))){
         if($_GET['aksi']=='hapus'){
             $id_transaksi = $_GET['data'];
@@ -88,9 +96,9 @@
                              $halaman = $_GET['halaman'];
                              $posisi = ($halaman-1) * $batas;
                         }
-                        $sql_t = "SELECT `t`.`id_transaksi`, `t`.`status`, `u`.`nama`, `h`.`hotel`, `j`.`jenis_kamar` FROM `transaksi` `t` INNER JOIN `user` `u` ON `t`.`id_user` = `u`.`id_user` INNER JOIN `hotel` `h` ON `t`.`id_hotel` = `h`.`id_hotel` INNER JOIN `jenis_kamar` `j` ON `t`.`id_jenis_kamar` = `j`.`id_jenis_kamar`";
+                        $sql_t = "SELECT `t`.`id_transaksi`, `t`.`status`, `u`.`nama`, `h`.`hotel`, `j`.`jenis_kamar` FROM `transaksi` `t` INNER JOIN `user` `u` ON `t`.`id_user` = `u`.`id_user` INNER JOIN `hotel` `h` ON `t`.`id_hotel` = `h`.`id_hotel` INNER JOIN `jenis_kamar` `j` ON `t`.`id_jenis_kamar` = `j`.`id_jenis_kamar` WHERE `t`.`id_hotel` = '$id_hotel'";
                         if(!empty($katakunci_nama)){
-                            $sql_t .= " WHERE `u`.`nama` LIKE '%$katakunci_nama%'";
+                            $sql_t .= " AND `u`.`nama` LIKE '%$katakunci_nama%'";
                             }
                             $sql_t .= " ORDER BY `u`.`nama` limit $posisi, $batas";
                         $query_t = mysqli_query($koneksi, $sql_t);

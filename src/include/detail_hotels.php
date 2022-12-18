@@ -65,11 +65,11 @@ if(isset($_GET['data']) && isset($_GET['hotel'])){
                 <div class="col-lg-6 px-5">
                     <div class="sub-section">
                         <h1>About <span class="sub-title">Place</span></h1>
-                        <h5><?php echo $deskripsi_hotel; ?></h5>
+                        <h5 style="text-align: justify"><?php echo $deskripsi_hotel; ?></h5>
                     </div>
                     <div class="sub-section">
                         <h1>Facilities <span class="sub-title"></span></h1>
-                        <h5><?php echo $fasilitas; ?></h5>
+                        <h5 style="text-align: justify"><?php echo $fasilitas; ?></h5>
                     </div>
                     <div class="sub-section">
                         <h1>Contact <span class="sub-title"></span></h1>

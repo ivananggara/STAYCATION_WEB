@@ -170,6 +170,14 @@ if(isset($_GET["include"])){
         include("includes_user/navbar.php");
         include("include/search.php");
         include("includes_user/footer.php");
+    }else if($include=="detail-destinasi"){
+        include("includes_user/navbar.php");
+        include("include/detail_destinasi.php");
+        include("includes_user/footer.php");
+    }else if($include=="detail-hotels"){
+        include("includes_user/navbar.php");
+        include("include/detail_hotels.php");
+        include("includes_user/footer.php");
     }else {
         include("includes_user/navbar.php");
         include("include/home.php");

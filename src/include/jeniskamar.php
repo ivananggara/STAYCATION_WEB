@@ -1,4 +1,13 @@
 <?php 
+if(isset($_SESSION['id_user'])){
+  $id_user = $_SESSION['id_user'];
+  $sql = "SELECT `id_hotel` FROM `hotel` WHERE `id_user` = '$id_user'";
+  $query = mysqli_query($koneksi, $sql);
+  while($data = mysqli_fetch_row($query)){
+    $id_hotel = $data[0];
+    $_SESSION['id_hotel'] = $id_hotel;
+  }
+}
  if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 	if($_GET['aksi']=='hapus'){
 		$id_jenis_kamar = $_GET['data'];
