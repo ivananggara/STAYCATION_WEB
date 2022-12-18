@@ -48,7 +48,7 @@ if(isset($_SESSION['katakunci_jenis_kamar'])){
               <!-- /.card-header -->
               <div class="card-body">
               <div class="col-md-12">
-                  <form method="" action="">
+                  <form method="post" action="index.php?include=jenis-kamar">
                     <div class="row">
                         <div class="col-md-4 bottom-10">
                           <input type="text" class="form-control" id="kata_kunci" name="katakunci">
@@ -84,6 +84,7 @@ if(isset($_SESSION['katakunci_jenis_kamar'])){
                       </tr>
                     </thead>
                     <tbody>
+                      
                       <?php
                       $batas = 5;
                       if(!isset($_GET['halaman'])){
@@ -92,7 +93,8 @@ if(isset($_SESSION['katakunci_jenis_kamar'])){
                       }else{
                            $halaman = $_GET['halaman'];
                            $posisi = ($halaman-1) * $batas;
-                      }                      
+                      }                  
+                          
                       $id_user = $_SESSION['id_user'];
                       $sql = "SELECT `id_jenis_kamar`, `jenis_kamar`, `harga_kamar`, `jumlah_kamar` FROM `jenis_kamar`  WHERE `id_user` = '$id_user'";
                       if(!empty($katakunci_jenis_kamar)){
@@ -118,6 +120,7 @@ if(isset($_SESSION['katakunci_jenis_kamar'])){
                         $query_jum = mysqli_query($koneksi,$sql_jum);
                         $jum_data = mysqli_num_rows($query_jum);
                         $jum_halaman = ceil($jum_data/$batas);
+                        
                         ?>
                         <tr>
                         <td><?php echo $no ; ?></td>

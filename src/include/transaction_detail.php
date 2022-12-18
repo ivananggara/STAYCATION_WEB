@@ -1,6 +1,4 @@
 <?php
-  include("../koneksi/koneksi.php");
-  session_start();
   if(isset($_GET['data'])){
     $id_transaksi = $_GET['data'];
     $_SESSION['id_transaksi'] = $id_transaksi;
@@ -17,16 +15,8 @@
     }
   }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
+
 <link rel="stylesheet" href="assets/css/transaction.css" type="text/css">
-<body>
-    <?php 
-        include("includes_user/navbar.php");
-    ?>
     <section id="transaction-detail">
         <div class="container w-100">
         <h1><span class="sub-title">Transaction </span>Detail</h1>
@@ -61,16 +51,13 @@
                 </div>
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6 d-flex flex-row justify-content-center">
                     <div class="img-edit px-5">
-                        <img src="assets/img/<?php echo $foto_profil ; ?>" alt="">
+                    <?php if(!empty($foto_profil)){?>
+                            <img src="assets/img/<?php echo $foto_profil; ?>" alt="">
+                        <?php } else { ?>
+                            <img src="assets/img/guest.svg" alt="">
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <?php 
-        include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-</body>
-</html>

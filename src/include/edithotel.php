@@ -1,6 +1,4 @@
 <?php
-  include("../koneksi/koneksi.php");
-  session_start();
   if(isset($_GET['data'])){
     $id_hotel = $_GET['data'];
     $_SESSION['id_hotel'] = $id_hotel;
@@ -18,20 +16,6 @@
   }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
-
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -40,7 +24,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="hotel.php">Hotel</a></li>
+              <li class="breadcrumb-item"><a href="index.php?include=hotel">Hotel</a></li>
               <li class="breadcrumb-item active">Edit Hotel</li>
             </ol>
           </div>
@@ -55,16 +39,21 @@
       <div class="card-header">
         <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Edit Hotel</h3>
         <div class="card-tools">
-          <a href="hotel.php" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+          <a href="index.php?include=hotel" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
         </div>
       </div>
       <!-- /.card-header -->
       <!-- form start -->
       </br>
       <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf data wajib di isi</div>
+        <?php if ((!empty($_GET['notif'])) && (!empty($_GET['jenis']))) { ?>
+        <?php if ($_GET['notif'] == "editkosong") { ?>
+        <div class="alert alert-danger" role="alert">Maaf data
+          <?php echo $_GET['jenis']; ?> wajib di isi</div>
+        <?php } ?>
+        <?php } ?>
       </div>
-      <form class="form-horizontal" action="konfirmasiedithotel.php" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" action="index.php?include=konfirmasi-edit-hotel" method="post" enctype="multipart/form-data">
         <div class="card-body">          
           <div class="form-group row">
             <label for="gambar_hotel" class="col-sm-3 col-form-label">Gambar Hotel</label>
@@ -166,14 +155,4 @@
     <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

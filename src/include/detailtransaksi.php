@@ -1,6 +1,4 @@
 <?php
-  include("../koneksi/koneksi.php");
-  session_start();
   if(isset($_GET['data'])){
     $id_transaksi = $_GET['data'];
     $_SESSION['id_transaksi'] = $id_transaksi;
@@ -19,30 +17,17 @@
     }
   }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3><i class="fas fa-building"></i> Detail Hotel</h3>
+            <h3><i class="fas fa-receipt"></i> Detail Transaksi</h3>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="hotel.php">Hotel</a></li>
-              <li class="breadcrumb-item active">Detail Hotel</li>
+              <li class="breadcrumb-item"><a href="index.php?include=transaksi">Transaksi</a></li>
+              <li class="breadcrumb-item active">Detail Transaksi</li>
             </ol>
           </div>
         </div>
@@ -54,7 +39,7 @@
             <div class="card">
               <div class="card-header">
                 <div class="card-tools">
-                  <a href="hotel.php" class="btn btn-sm btn-warning float-right">
+                  <a href="index.php?include=transaksi" class="btn btn-sm btn-warning float-right">
                   <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
                 </div>
               </div>
@@ -102,7 +87,7 @@
                   </table>  
               </div>
               <!-- /.card-body -->
-              <form action="konfirmasistatus.php" method="get">
+              <form action="index.php?include=konfirmasi-status" method="post">
                   <div class="card-footer">
                         <div class="col-sm-12">
                         <button type="submit" class="btn btn-info float-right"><i class="fas fa-save"></i> Konfirmasi</button>
@@ -114,14 +99,4 @@
             <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

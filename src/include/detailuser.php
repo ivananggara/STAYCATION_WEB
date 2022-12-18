@@ -1,6 +1,4 @@
 <?php
-include("../koneksi/koneksi.php");
-session_start();
 if (isset($_GET['data'])) {
  $id_user             = $_GET['data'];
  $_SESSION['id_user'] = $id_user;
@@ -19,30 +17,17 @@ if (isset($_GET['data'])) {
  }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3><i class="fas fa-map"></i> Detail Wisata</h3>
+            <h3><i class="fas fa-user"></i> Detail User</h3>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="pengaturanuser.php">Wisata</a></li>
-              <li class="breadcrumb-item active">Detail Wisata</li>
+              <li class="breadcrumb-item"><a href="index.php?include=pengaturan-user">User</a></li>
+              <li class="breadcrumb-item active">Detail User</li>
             </ol>
           </div>
         </div>
@@ -54,7 +39,7 @@ if (isset($_GET['data'])) {
             <div class="card">
               <div class="card-header">
                 <div class="card-tools">
-                  <a href="pengaturanuser.php" class="btn btn-sm btn-warning float-right">
+                  <a href="index.php?include=pengaturan-user" class="btn btn-sm btn-warning float-right">
                   <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
                 </div>
               </div>
@@ -102,14 +87,3 @@ if (isset($_GET['data'])) {
             <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
-
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

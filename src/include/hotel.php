@@ -1,6 +1,4 @@
 <?php
-session_start();
-include('../koneksi/koneksi.php');
 if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 	if($_GET['aksi']=='hapus'){
 		$id_hotel = $_GET['data'];
@@ -10,21 +8,14 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 		mysqli_query($koneksi,$sql_dh);
 	}
 }
+if (isset($_POST["katakunci"])) {
+  $katakunci_hotel             = $_POST["katakunci"];
+  $_SESSION['katakunci_hotel'] = $katakunci_hotel;
+ }
+ if (isset($_SESSION['katakunci_hotel'])) {
+  $katakunci_hotel = $_SESSION['katakunci_hotel'];
+ }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
-
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -46,14 +37,14 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
               <div class="card-header">
                 <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar  Hotel</h3>
                 <div class="card-tools">
-                  <a href="tambahhotel.php" class="btn btn-sm btn-info float-right">
+                  <a href="index.php?include=tambah-hotel" class="btn btn-sm btn-info float-right">
                   <i class="fas fa-plus"></i> Tambah  Hotel</a>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
               <div class="col-md-12">
-                  <form method="" action="">
+                  <form method="post" action="index.php?include=hotel">
                     <div class="row">
                         <div class="col-md-4 bottom-10">
                           <input type="text" class="form-control" id="kata_kunci" name="katakunci">
@@ -100,8 +91,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                         }
                         $sql_h="SELECT `h`.`id_hotel`,`h`.`hotel`,`h`.`deskripsi_hotel`, `w`.`wisata` FROM `hotel` `h` INNER JOIN `wisata` `w` ON `h`.`id_wisata` = `w`.`id_wisata` ";
                         //echo $sql;
-                        if(isset($_GET["katakunci"])){
-                          $katakunci_hotel = $_GET["katakunci"];
+                        if(!empty($katakunci_hotel)){
                           $sql_h .= " WHERE `h`.`hotel` LIKE '%$katakunci_hotel%'";
                           }
                           $sql_h .= " ORDER BY `h`.`hotel` limit $posisi, $batas";
@@ -120,9 +110,9 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                         <td><?php echo $wisata; ?></td>
                         <td><?php echo $deskripsi_hotel; ?></td>
                         <td align="center">
-                          <a href="edithotel.php?data=<?php echo $id_hotel; ?>" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                          <a href="detailhotel.php?data=<?php echo $id_hotel; ?>" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>
-                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $hotel; ?>?'))window.location.href = 'hotel.php?aksi=hapus&data=<?php echo $id_hotel;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
+                          <a href="index.php?include=edit-hotel&data=<?php echo $id_hotel; ?>" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
+                          <a href="index.php?include=detail-hotel&data=<?php echo $id_hotel; ?>" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>
+                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $hotel; ?>?'))window.location.href = 'index.php?include=hotel&aksi=hapus&data=<?php echo $id_hotel;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
                         </td>
                       </tr>
                       <?php $no++; } ?>
@@ -133,8 +123,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
               <?php
                 //hitung jumlah semua data 
                 $sql_jum = "SELECT `h`.`id_hotel`,`h`.`hotel`,`h`.`deskripsi_hotel`, `w`.`wisata` FROM `hotel` `h` INNER JOIN `wisata` `w` ON `h`.`id_wisata` = `w`.`id_wisata` "; 
-                if (isset($_GET["katakunci"])){
-                  $katakunci_wisata = $_GET["katakunci"];
+                if (!empty($katakunci_hotel)){
                   $sql_jum .= " WHERE `h`.`hotel` LIKE '%$katakunci_hotel%'";
                 } 
                 $sql_jum .= " ORDER BY `h`.`hotel`";
@@ -145,91 +134,36 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
               <div class="card-footer clearfix">
               <ul class="pagination pagination-sm m-0 float-right">
                 <?php 
-                    if($jum_halaman==0){
-                      //tidak ada halaman
-                    }else if($jum_halaman==1){
-                      echo "<li class='page-item'><a class='page-link'>1</a></li>";
-                    }else{
-                      $sebelum = $halaman-1;
-                      $setelah = $halaman+1;
-                      if (isset($_GET["katakunci"])){
-                          $katakunci_hotel = $_GET["katakunci"];
-                          if($halaman!=1){
-                              echo "<li class='page-item'>
-                              <a class='page-link' 
-                              href='hotel.php?katakunci=$katakunci_hotel
-                              &halaman=1'>First</a></li>";
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='hotel.php?katakunci=$katakunci_hotel&
-                              halaman=$sebelum'>
-                              «</a></li>";
-                          }
-                            for($i=1; $i<=$jum_halaman; $i++){
-                              if ($i > $halaman - 5 and $i < $halaman + 5 ) {
-                                if($i!=$halaman){
-                                    echo "<li class='page-item'><a class='page-link' 
-                                    href='hotel.php?katakunci
-                                    =$katakunci_hotel&halaman=$i'>
-                                    $i</a></li>";
-                                }else{
-                                    echo "<li class='page-item'>
-                                    <a class='page-link'>$i</a></li>";
-                                }
-                              }
-                          }
-                            if($halaman!=$jum_halaman){
-                              echo "<li class='page-item'>
-                              <a class='page-link'  
-                              href='hotel.php?katakunci=$katakunci_hotel
-                              &halaman=$setelah'>»</a></li>";
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='hotel.php?katakunci=
-                              $katakunci_hotel&halaman=$jum_halaman'>
-                              Last</a></li>";
-                            }
+                if($jum_halaman==0){
+                  //tidak ada halaman
+                }else if($jum_halaman==1){
+                  echo "<li class='page-item'><a class='page-link'>1</a></li>";
+                }else{
+                  $sebelum = $halaman-1;
+                  $setelah = $halaman+1;
+                  if($halaman!=1){
+                    echo "<li class='page-item'><a class='page-link' href='index.php?include=hotel&halaman=1'>First</a></li>";
+                    echo "<li class='page-item'><a class='page-link' href='index.php?include=hotel&halaman=$sebelum'>«</a></li>";
+                  }
+                  for($i=1; $i<=$jum_halaman; $i++){
+                      if ($i > $halaman - 5 and $i < $halaman + 5 ) {
+                        if($i!=$halaman){
+                            echo "<li class='page-item'><a class='page-link' href='index.php?include=hotel&halaman=$i'>$i</a></li>";
                         }else{
-                          if($halaman!=1){
-                            echo "<li class='page-item'><a class='page-link' 
-                            href='hotel.php?halaman=1'>First</a></li>";
-                            echo "<li class='page-item'><a class='page-link' 
-                            href='hotel.php?
-                            halaman=$sebelum'>«</a></li>";
-                          }
-                          for($i=1; $i<=$jum_halaman; $i++){
-                            if ($i > $halaman - 5 and $i < $halaman + 5 ) {
-                               if($i!=$halaman){
-                                   echo "<li class='page-item'><a class='page-link' 
-                                   href='hotel.php?halaman=$i'>$i</a></li>";
-                               }else{
-                                   echo "<li class='page-item'><a class='page-link'>$i</a></li>";
-                               }
-                            }
-                         }
-                         
-                            if($halaman!=$jum_halaman){
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='hotel.php?halaman=$setelah'>
-                              »</a></li>";
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='hotel.php?
-                              halaman=$jum_halaman'>Last</a></li>";
-                            }
-                            }
-                      }?>
+                            echo "<li class='page-item'><a class='page-link'>$i</a></li>";
+                        }
+                      }
+                  }
+                  if($halaman!=$jum_halaman){
+                        echo "<li class='page-item'><a class='page-link' href='index.php?include=hotel&halaman=$setelah'>»</a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='index.php?include=hotel&halaman=$jum_halaman'>Last</a></li>";
+                  }
+                              
+                }?>
                 </ul>
               </div>
             </div>
             <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

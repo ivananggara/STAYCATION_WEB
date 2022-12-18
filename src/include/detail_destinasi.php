@@ -1,6 +1,4 @@
 <?php
-session_start();
-include ("../koneksi/koneksi.php");
 if(isset($_GET['data'])){
     $id_wisata = $_GET['data'];
     $sql_dw = "select `wisata`, `provinsi`, `kota`, `rating_wisata`, `deskripsi_wisata`, `gambar_wisata1`, `gambar_wisata2`, `gambar_wisata3` from `wisata` where `id_wisata`='$id_wisata'";
@@ -17,20 +15,13 @@ if(isset($_GET['data'])){
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
+
 <link rel="stylesheet" href="assets/css/detail_destinasi.css" type="text/css">
-<body>
-    <?php 
-        include("includes_user/navbar.php");
-    ?>
+
     <nav aria-label="breadcrumb" id="breadcrumb">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.php?include=home">Home</a></li>
                 <li class="breadcrumb-item active-item" aria-current="page">Detail Destinasi</li>
             </ol>
         </div>
@@ -89,7 +80,7 @@ if(isset($_GET['data'])){
                                     <img src="assets/img/<?php echo $gambar_hotel; ?>" alt="" class="card-img-top">
                                     </div>
                                     <div class="card-back d-flex justify-content-center align-items-center">
-                                        <div class="btn-scd"><a href="detail_hotels.php?hotel=<?php echo $id_hotel; ?>&data=<?php echo $id_wisata; ?>">See More</a></div>
+                                        <div class="btn-scd"><a href="index.php?include=detail-hotels&hotel=<?php echo $id_hotel; ?>&data=<?php echo $id_wisata; ?>">See More</a></div>
                                     </div>
                                 </div>
                                 <div class="card-title">
@@ -119,15 +110,9 @@ if(isset($_GET['data'])){
                 <div class="alert alert-danger mx-4" role="alert">Ketikkan ceritamu untuk dikirim</div>
             <?php }?>
         <?php }?>
-        <form action="konfirmasitambahceritauser.php" method="post" enctype="multipart/form">
+        <form action="index.php?include=konfirmasi-tambah-cerita-user" method="post" enctype="multipart/form">
             <textarea name="cerita" id="" cols="30" rows="10" placeholder="put your story here"></textarea>
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
         </div>
     </section>
-    <?php 
-        include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-</body>
-</html>

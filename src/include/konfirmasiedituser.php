@@ -1,6 +1,4 @@
 <?php
-include("../koneksi/koneksi.php");
-session_start();
 if (isset($_SESSION['id_user'])) {
  $id_user  = $_SESSION['id_user'];
  $nama     = $_POST['nama'];
@@ -22,19 +20,15 @@ if (isset($_SESSION['id_user'])) {
  }
 
  if (empty($nama)) {
-  header("Location:edituser.php?notif=tambahkosong&jenis=nama");
+  header("Location:index.php?include=edit-user&data=".$id_user."&notif=tambahkosong&jenis=nama");
  } elseif (empty($email)) {
-  header("Location:edituser.php?notif=tambahkosong&jenis=email");
+  header("Location:index.php?include=edit-user&data=".$id_user."&notif=tambahkosong&jenis=email");
  } elseif (empty($username)) {
-  header("Location:edituser.php?notif=tambahkosong&jenis=username");
+  header("Location:index.php?include=edit-user&data=".$id_user."&notif=tambahkosong&jenis=username");
  } elseif (empty($password)) {
-  header("Location:edituser.php?notif=tambahkosong&jenis=password");
- } elseif (empty($pekerjaan)) {
-  header("Location:edituser.php?notif=tambahkosong&jenis=pekerjaan");
- } elseif (empty($kontak)) {
-  header("Location:edituser.php?notif=tambahkosong&jenis=kontak");
+  header("Location:index.php?include=edit-user&data=".$id_user."&notif=tambahkosong&jenis=password");
  } elseif (empty($level)) {
-  header("Location:edituser.php?notif=tambahkosong&jenis=level");
+  header("Location:index.php?include=edit-user&data=".$id_user."&notif=tambahkosong&jenis=level");
  } else {
   $lokasi_file = $_FILES['foto_profil']['tmp_name'];
   $nama_file   = $_FILES['foto_profil']['name'];
@@ -49,11 +43,11 @@ if (isset($_SESSION['id_user'])) {
                     `foto_profil`='$nama_file' WHERE `id_user`='$id_user'";
    mysqli_query($koneksi, $sql);
   } else {
-   $sql = "update `user` set `nama`='$nama', `email`='$email', `username`='$username', `password`='$password'
+   $sql = "update `user` set `nama`='$nama', `email`='$email', `username`='$username', `password`='$password', `pekerjaan`='$pekerjaan', `kontak`='$kontak',`level`='$level'
                     where `id_user`='$id_user'";
    //echo $sql;
    mysqli_query($koneksi, $sql);
   }
-  header("Location:pengaturanuser.php?notif=editberhasil");
+  header("Location:index.php?include=pengaturan-user&notif=editberhasil");
  }
 }

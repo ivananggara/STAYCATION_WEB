@@ -1,14 +1,6 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
+
 <link rel="stylesheet" href="assets/css/home.css" type="text/css">
-<body></body>
-    <?php 
-        include("includes_user/navbar_home.php");
-    ?>
     <section id="hero">
         <div class="container">
             <div class="row">
@@ -53,7 +45,7 @@
                                             </div>
                                         </div>
                                         <div class="btn-green">
-                                            <a href="detail_destinasi.php?data=<?php echo $id_wisata;?>">Click here</a>
+                                            <a href="index.php?include=detail-destinasi&data=<?php echo $id_wisata;?>">Click here</a>
                                         </div>
                                     </div>
                                 </div>
@@ -107,9 +99,3 @@
             </div>
         </div>
     </section>
-    <?php 
-        include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-</body>
-</html>

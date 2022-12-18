@@ -1,6 +1,5 @@
 <?php
-  include("../koneksi/koneksi.php");
-  session_start();
+
   if(isset($_SESSION['id_user'])){
     $id_user = $_SESSION['id_user'];
     $sql = "SELECT `hotel`,`bintang_hotel`, `jarak`, `fasilitas`,`deskripsi_hotel`,`email_hotel`, `kontak_hotel`,`gambar_hotel`,`gambar_interior1`,`gambar_interior2`,`gambar_interior3`,`gambar_interior4` FROM `hotel` WHERE `id_user` ='$id_user'";
@@ -21,20 +20,7 @@
     }
   }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -55,13 +41,18 @@
             <div class="card">
               <div class="card-header">
                 <div class="card-tools">
-                  <a href="editprofilhotel.php" class="btn btn-sm btn-info float-right"><i class="fas fa-edit"></i> Edit Profil Hotel</a>
+                  <a href="index.php?include=edit-profil-hotel" class="btn btn-sm btn-info float-right"><i class="fas fa-edit"></i> Edit Profil Hotel</a>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <div class="col-sm-12">
-                    <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
+              <div class="col-sm-12">
+                  <?php if(!empty($_GET['notif'])){?>
+                    <?php if($_GET['notif']=="editberhasil"){?>
+                          <div class="alert alert-success" role="alert">
+                          Data Berhasil Diedit</div>
+                    <?php }?>
+                      <?php }?>
                 </div>
                 <table class="table table-bordered">
                     <tbody>  
@@ -125,14 +116,4 @@
             <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

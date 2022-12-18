@@ -1,6 +1,4 @@
 <?php
-session_start();
- include("../koneksi/koneksi.php");
  if(isset($_SESSION['id_hotel'])){
     $id_hotel = $_SESSION['id_hotel'];
     $hotel = $_POST['hotel'];
@@ -22,19 +20,19 @@ session_start();
  }
 
  if(empty($hotel)){	   
-    header("Location:edithotel.php?data=$id_hotel&notif=editkosong&jenis=hotel");
+    header("Location:index.php?include=edit-hotel&data=".$id_hotel."&notif=editkosong&jenis=hotel");
  }else if(empty($email_hotel)){
-  header("Location:edithotel.php?data=$id_hotel&notif=editkosong&jenis=email hotel");
+  header("Location:index.php?include=edit-hotel&data=".$id_hotel."&notif=editkosong&jenis=email hotel");
  }else if(empty($kontak_hotel)){	    
-    header("Location:edithotel.php?data=$id_hotel&notif=editkosong&jenis=kontak hotel");
+    header("Location:index.php?include=edit-hotel&data=".$id_hotel."&notif=editkosong&jenis=kontak hotel");
  }else if(empty($bintang_hotel)){
-  header("Location:edithotel.php?data=$id_hotel&notif=editkosong&jenis=bintang hotel");
+  header("Location:index.php?include=edit-hotel&data=".$id_hotel."&notif=editkosong&jenis=bintang hotel");
  }else if(empty($jarak)){
-  header("Location:edithotel.php?data=$id_hotel&notif=editkosong&jenis=jarak");
+  header("Location:index.php?include=edit-hotel&data=".$id_hotel."&notif=editkosong&jenis=jarak");
  }else if(empty($fasilitas)){
-  header("Location:edithotel.php?data=$id_hotel&notif=editkosong&jenis=fasilitas");
+  header("Location:index.php?include=edit-hotel&data=".$id_hotel."&notif=editkosong&jenis=fasilitas");
  }else if(empty($deskripsi_hotel)){
-  header("Location:edithotel.php?data=$id_hotel&notif=editkosong&jenis=deskripsihotel");
+  header("Location:index.php?include=edit-hotel&data=".$id_hotel."&notif=editkosong&jenis=deskripsihotel");
  }else{   
     $lokasi_gambar_hotel = $_FILES['gambar_hotel']['tmp_name'];
     $nama_gambar_hotel = $_FILES['gambar_hotel']['name'];
@@ -99,6 +97,6 @@ session_start();
         mysqli_query($koneksi,$sql);
     }
     unset($_SESSION['id_hotel']);
-    header("Location:hotel.php?notif=editberhasil");
+    header("Location:index.php?include=hotel&notif=editberhasil");
   }
 ?>

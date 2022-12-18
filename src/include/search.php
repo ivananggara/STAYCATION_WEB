@@ -1,19 +1,11 @@
 
 <?php
-session_start();
-include("../koneksi/koneksi.php");
+
 $katakunci = $_GET['katakunci'];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
+
 <link rel="stylesheet" href="assets/css/home.css" type="text/css">
-<body>
-    <?php 
-        include("includes_user/navbar.php");
-    ?>
+
     <section id="card-destination" style="height:100vh;">
         <div class="container">
             <h1 class="search-title">Result, <span class="sub-title"><?php echo $katakunci; ?></span></h1>
@@ -44,7 +36,7 @@ $katakunci = $_GET['katakunci'];
                                             </div>
                                         </div>
                                         <div class="btn-green">
-                                            <a href="detail_destinasi.php?data=<?php echo $id_wisata;?>">Click here</a>
+                                            <a href="index.php?include=detail-destinasi&data=<?php echo $id_wisata;?>">Click here</a>
                                         </div>
                                     </div>
                                 </div>
@@ -57,10 +49,3 @@ $katakunci = $_GET['katakunci'];
             </div>
         </div>
     </section>
-    
-    <?php 
-        include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-</body>
-</html>

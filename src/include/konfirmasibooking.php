@@ -1,6 +1,5 @@
 <?php
-include "../koneksi/koneksi.php";
-session_start();
+
 $id_user = $_SESSION['id_user'];
 $id_hotel = $_SESSION['id_hotel'];
 $id_jenis_kamar = $_SESSION['id_jenis_kamar'];
@@ -13,15 +12,15 @@ $nama_file   = $_FILES['bukti_transfer']['name'];
 $direktori   = 'assets/img/' . $nama_file;
 
 if (empty($tgl_checkin)) {
- header("Location:booking_information.php?notif=tambahkosong&jenis=check in");
+ header("Location:index.php?include=booking-information&notif=tambahkosong&jenis=check in");
 } elseif (empty($tgl_checkin)) {
- header("Location:booking_information.php?notif=tambahkosong&jenis=check Out");
+ header("Location:index.php?include=booking-information&notif=tambahkosong&jenis=check out");
 }elseif (empty($nama_pengirim)) {
-header("Location:booking_information.php?notif=tambahkosong&jenis=nama pengirim");
+header("Location:index.php?include=booking-information&notif=tambahkosong&jenis=nama pengirim");
 } else {
  $sql_t = "INSERT INTO `transaksi`
 (`id_hotel`, `id_jenis_kamar`,`id_user`,`bukti_transfer`,`nama_pengirim`,`tgl_checkin`,`tgl_checkout`)
 VALUES ('$id_hotel','$id_jenis_kamar','$id_user','$nama_file', '$nama_pengirim','$tgl_checkin','$tgl_checkout')";
  mysqli_query($koneksi, $sql_t);
- header("Location:waiting_validation.php");
+ header("Location:index.php?include=waiting-validation");
 }

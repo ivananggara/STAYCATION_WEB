@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
+
 <link rel="stylesheet" href="assets/css/register.css" type="text/css">
-<body>
- 
     <section id="register">
         <div class="row">
             <div class="col-lg-6">
@@ -21,7 +15,7 @@
                             <?php echo $_GET['jenis'];?> wajib di isi</div>
                         <?php }?>
                     <?php }?>
-                    <form action="konfirmasiregistrasi.php" method="post">
+                    <form action="index.php?include=konfirmasi-registrasi" method="post">
                         <div class="mb-3 form-profile">
                             <label for="exampleInputEmail1" class="form-label label-profile">Name</label>
                             <input type="text" class="form-control" id="name" name="nama" aria-describedby="nameHelp"  placeholder="please input your name here">
@@ -44,8 +38,3 @@
             </div>
             </div>
         </section>
-    <?php 
-        include("includes_user/script.php");
-    ?>
-</body>
-</html>

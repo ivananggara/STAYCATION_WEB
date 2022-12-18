@@ -1,5 +1,4 @@
 <?php
-include "../koneksi/koneksi.php";
 $nama        = $_POST['nama'];
 $email       = $_POST['email'];
 $user        = $_POST['username'];
@@ -14,26 +13,26 @@ $nama_file   = $_FILES['foto_profil']['name'];
 $direktori   = 'assets/img/' . $nama_file;
 
 if (empty($nama)) {
- header("Location:tambahuser.php?notif=tambahkosong&jenis=nama");
+ header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=nama");
 } elseif (empty($email)) {
- header("Location:tambahuser.php?notif=tambahkosong&jenis=email");
+ header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=email");
 }elseif (empty($pekerjaan)) {
-header("Location:tambahuser.php?notif=tambahkosong&jenis=pekerjaan");
+header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=pekerjaan");
 }elseif (empty($kontak)) {
-header("Location:tambahuser.php?notif=tambahkosong&jenis=kontak");
+header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=kontak");
 } elseif (empty($username)) {
- header("Location:tambahuser.php?notif=tambahkosong&jenis=username");
+ header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=username");
 } elseif (empty($password)) {
- header("Location:tambahuser.php?notif=tambahkosong&jenis=password");
+ header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=password");
 } elseif (empty($level)) {
- header("Location:tambahuser.php?notif=tambahkosong&jenis=level");
+ header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=level");
 } elseif (!move_uploaded_file($lokasi_file, $direktori)) {
- header("Location:tambahuser.php?notif=tambahkosong&jenis=foto_profil");
+ header("Location:index.php?include=tambah-user&notif=tambahkosong&jenis=foto_profil");
 } else {
  $sql_user = "INSERT INTO `user`
 (`nama`, `email`,`username`,`password`,`pekerjaan`, `kontak`,`level`,`foto_profil`)
 VALUES ('$nama','$email','$username','$password', '$pekerjaan','$kontak','$level','$nama_file')";
  mysqli_query($koneksi, $sql_user);
  $id_user = mysqli_insert_id($koneksi);
- header("Location:pengaturanuser.php?notif=tambahberhasil");
+ header("Location:index.php?include=pengaturan-user&notif=tambahberhasil");
 }

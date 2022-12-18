@@ -1,6 +1,5 @@
 <?php
-    include("../koneksi/koneksi.php");
-    session_start();
+
     $id_hotel = $_GET['hotel'];
     $SESSION['id_hotel'] = $id_hotel;
     $malam = $_GET['malam'];
@@ -20,19 +19,12 @@
         $gambar_hotel = $data_h[1];
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
+
 <link rel="stylesheet" href="assets/css/booking.css" type="text/css">
 <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
 
-<body>
-    <?php 
-        include("includes_user/navbar.php");
-    ?>
     <section id="booking-information">
         <div class="container w-100">
         <h1><span class="sub-title">Booking </span>Information</h1>
@@ -50,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6 px-5">
-                <form action="konfirmasibooking.php" method="post" enctype="multipart/form-data">
+                <form action="index.php?include=konfirmasi-booking" method="post" enctype="multipart/form-data">
                     <div class="mb-3 form-book">
                         <label for="exampleInputEmail1" class="form-label label-book">Check In Date</label>
                         <input type="text" class="form-control" id="check-in" placeholder="how long you will stay" name="check-in">
@@ -73,14 +65,4 @@
             </div>
         </div>
     </section>
-
-    <?php 
-        include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-    <script>
-    $('#check-in').datepicker();
-    $('#check-out').datepicker();
-    </script>
-</body>
-</html>
+    

@@ -1,6 +1,5 @@
 <?php
-    session_start();
-    include("../koneksi/koneksi.php");
+
     $sql_konsumen = "SELECT COUNT(`nama`) as total FROM `user` where `level`='konsumen'";
     $query_konsumen = mysqli_query($koneksi, $sql_konsumen);
     while($data_konsumen = mysqli_fetch_row($query_konsumen)){
@@ -17,15 +16,9 @@
         $count_wisata = $data_wisata[0];
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
+
 <link rel="stylesheet" href="assets/css/about.css" type="text/css">
-<?php 
-    include("includes_user/navbar.php");
-?>
+
 <style>
     nav{
         border-bottom: 2px solid var(--black75);
@@ -71,9 +64,3 @@
             </div>
         </div>
     </section>
-    <?php 
-    include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-</body>
-</html>

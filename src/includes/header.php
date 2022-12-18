@@ -8,7 +8,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link">Home</a>
+        <a href="index.php?include=profil" class="nav-link">Home</a>
       </li>
       <!--<li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -17,7 +17,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a href="signout.php" class="nav-link">
+        <a href="index.php?include=sign-out" class="nav-link">
             Sign Out&nbsp; 
             <i class="fas fa-sign-out-alt"></i>
         </a>

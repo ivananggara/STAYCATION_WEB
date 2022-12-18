@@ -1,34 +1,28 @@
 <?php
-    session_start();
-    include("../koneksi/koneksi.php");
     $id_user = $_SESSION['id_user'];
-    $sql_u = "SELECT `nama`, `username`, `email`, `pekerjaan`, `foto_profil` FROM `user` WHERE `id_user`='$id_user'";
+    $sql_u = "SELECT `nama`, `username`, `email`, `pekerjaan`,`kontak`, `foto_profil` FROM `user` WHERE `id_user`='$id_user'";
     $query_u = mysqli_query($koneksi, $sql_u);
     while($data_u = mysqli_fetch_row($query_u)){
         $nama = $data_u[0];
         $username = $data_u[1];
         $email = $data_u[2];
         $pekerjaan = $data_u[3];
-        $foto_profil = $data_u[4];
+        $kontak = $data_u[4];
+        $foto_profil = $data_u[5];
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
 <link rel="stylesheet" href="assets/css/profile.css" type="text/css">
-<body>
-    <?php 
-        include("includes_user/navbar.php");
-    ?>
     <section id="edit-profile">
         <div class="container w-100">
         <h1><span class="sub-title">Edit </span>Profile</h1>
             <div class="row">
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6">
                     <div class="img-edit px-5">
-                        <img src="assets/img/<?php echo $foto_profil; ?>" alt="">
+                        <?php if(!empty($foto_profil)){?>
+                            <img src="assets/img/<?php echo $foto_profil; ?>" alt="">
+                        <?php } else {?>
+                            <img src="assets/img/guest.svg" alt="">
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -45,7 +39,7 @@
                           Profil Berhasil Diedit</div>
                     <?php } ?>
                     <?php }?>
-                <form action="konfirmasieditprofileuser.php" method="post" enctype="multipart/form">
+                <form action="index.php?include=konfirmasi-edit-profile-user" method="post" enctype="multipart/form-data">
                     <div class="mb-3 form-profile">
                         <label for="exampleInputEmail1" class="form-label label-profile">Avatar</label>
                         <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="foto_profil">
@@ -66,16 +60,13 @@
                         <label for="exampleInputEmail1" class="form-label label-profile">Occupation</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $pekerjaan; ?>" aria-describedby="emailHelp" name="pekerjaan">
                     </div>
+                    <div class="mb-3 form-profile">
+                        <label for="exampleInputEmail1" class="form-label label-profile">Contact</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $kontak; ?>" aria-describedby="emailHelp" name="kontak">
+                    </div>
                     <button type="submit" class="btn btn-primary">Save Edit</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <?php 
-        include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-</body>
-</html>

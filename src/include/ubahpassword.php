@@ -1,21 +1,5 @@
-<?php
-  include("../koneksi/koneksi.php");
-  session_start();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
@@ -40,7 +24,7 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form class="form-horizontal" method="POST" action="konfirmasiubahpassword.php">
+          <form class="form-horizontal" method="POST" action="index.php?include=konfirmasi-ubah-password">
             <div class="card-body">
               <h6>
                 <i class="text-blue"><i class="fas fa-info-circle"></i> Silahkan memasukkan password lama dan password
@@ -96,13 +80,4 @@
 
       </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

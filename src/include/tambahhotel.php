@@ -1,21 +1,5 @@
-<?php 
-  include("../koneksi/koneksi.php");
-  session_start();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -24,7 +8,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="hotel.php">Hotel</a></li>
+              <li class="breadcrumb-item"><a href="index.php?include=hotel">Hotel</a></li>
               <li class="breadcrumb-item active">Tambah Hotel</li>
             </ol>
           </div>
@@ -39,7 +23,7 @@
       <div class="card-header">
         <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah Hotel</h3>
         <div class="card-tools">
-          <a href="hotel.php" class="btn btn-sm btn-warning float-right">
+          <a href="index.php?include=hotel" class="btn btn-sm btn-warning float-right">
           <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
         </div>
       </div>
@@ -52,7 +36,7 @@
             <?php echo $_GET['jenis'];?> wajib di isi</div>
         <?php }?>
       <?php }?>
-      <form class="form-horizontal" action="konfirmasitambahhotel.php" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" action="index.php?include=konfirmasi-tambah-hotel" method="post" enctype="multipart/form-data">
         <div class="card-body">
           
           <div class="form-group row">
@@ -194,14 +178,3 @@
     <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
-
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

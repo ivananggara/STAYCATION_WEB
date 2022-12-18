@@ -1,6 +1,4 @@
 <?php
-session_start();
-include('../koneksi/koneksi.php');
 if (isset($_GET['data'])){
   $id_wisata = $_GET['data'];
   $sql= "select `wisata`, `provinsi`, `kota`, `rating_wisata`, `deskripsi_wisata`, `gambar_wisata1`, `gambar_wisata2`, `gambar_wisata3` from `wisata` where `id_wisata`='$id_wisata'";
@@ -17,20 +15,7 @@ if (isset($_GET['data'])){
   }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -39,7 +24,7 @@ if (isset($_GET['data'])){
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="wisata.php">Wisata</a></li>
+              <li class="breadcrumb-item"><a href="index.php?include=wisata">Wisata</a></li>
               <li class="breadcrumb-item active">Detail Wisata</li>
             </ol>
           </div>
@@ -52,7 +37,7 @@ if (isset($_GET['data'])){
             <div class="card">
               <div class="card-header">
                 <div class="card-tools">
-                  <a href="wisata.php" class="btn btn-sm btn-warning float-right">
+                  <a href="index.php?include=wisata" class="btn btn-sm btn-warning float-right">
                   <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
                 </div>
               </div>
@@ -101,14 +86,4 @@ if (isset($_GET['data'])){
             <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

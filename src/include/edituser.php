@@ -1,6 +1,5 @@
 <?php
-include("../koneksi/koneksi.php");
-session_start();
+
 if (isset($_GET['data'])) {
  $id_user             = $_GET['data'];
  $_SESSION['id_user'] = $id_user;
@@ -19,20 +18,7 @@ if (isset($_GET['data'])) {
  }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -56,7 +42,7 @@ if (isset($_GET['data'])) {
     <div class="card-header">
       <h3 class="card-title" style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Edit Data User</h3>
       <div class="card-tools">
-        <a href="pengaturanuser.php" class="btn btn-sm btn-warning float-right"><i
+        <a href="index.php?include=pengaturan-user" class="btn btn-sm btn-warning float-right"><i
             class="fas fa-arrow-alt-circle-left"></i>
           Kembali</a>
       </div>
@@ -72,7 +58,7 @@ if (isset($_GET['data'])) {
       <?php } ?>
       <?php } ?>
     </div>
-    <form class="form-horizontal" action="konfirmasiedituser.php" method="POST"
+    <form class="form-horizontal" action="index.php?include=konfirmasi-edit-user" method="POST"
       enctype="multipart/form-data">
       <div class="card-body">
         <div class="form-group row">
@@ -155,16 +141,6 @@ if (isset($_GET['data'])) {
   <!-- /.card -->
 
 </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>
 
 

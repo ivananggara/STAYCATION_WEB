@@ -1,32 +1,16 @@
-<?php
- include("../koneksi/koneksi.php");
- session_start();
-?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3><i class="fas fa-plus"></i> Tambah Jenis Kamar</h3>
+            <h3><i class="fas fa-plus"></i> Tambah User</h3>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="pengaturanuser.php">Jenis Kamar</a></li>
-              <li class="breadcrumb-item active">Tambah Jenis Kamar</li>
+              <li class="breadcrumb-item"><a href="index.php?include=pengaturan-user">User</a></li>
+              <li class="breadcrumb-item active">Tambah User</li>
             </ol>
           </div>
         </div>
@@ -38,19 +22,22 @@
 
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah Jenis Kamar</h3>
+        <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah User</h3>
         <div class="card-tools">
-          <a href="pengaturanuser.php" class="btn btn-sm btn-warning float-right">
+          <a href="index.php?include=pengaturan-user" class="btn btn-sm btn-warning float-right">
           <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
         </div>
       </div>
       <!-- /.card-header -->
       <!-- form start -->
       </br></br>
-      <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf data wajib di isi</div>
-      </div>
-      <form class="form-horizontal" method="post" action="konfirmasitambahuser.php" enctype="multipart/form-data">
+      <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
+        <?php if($_GET['notif']=="tambahkosong"){?>
+            <div class="alert alert-danger" role="alert">Maaf data 
+            <?php echo $_GET['jenis'];?> wajib di isi</div>
+        <?php }?>
+      <?php }?>
+      <form class="form-horizontal" method="post" action="index.php?include=konfirmasi-tambah-user" enctype="multipart/form-data">
       <div class="card-body">
         <div class="form-group row">
           <label for="foto_profil" class="col-sm-12 col-form-label"><span class="text-info"><i class="fas fa-user-circle"></i>
@@ -125,14 +112,3 @@
     <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
-
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

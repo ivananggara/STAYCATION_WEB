@@ -1,6 +1,4 @@
 <?php
-session_start();
-include('../koneksi/koneksi.php');
 if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 	if($_GET['aksi']=='hapus'){
 		$id_cerita = $_GET['data'];
@@ -10,21 +8,15 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 		mysqli_query($koneksi,$sql_dh);
 	}
 }
+if (isset($_POST["katakunci"])) {
+  $katakunci_nama_c             = $_POST["katakunci"];
+  $_SESSION['katakunci_nama_c'] = $katakunci_nama_c;
+ }
+ if (isset($_SESSION['katakunci_nama_c'])) {
+  $katakunci_nama_c = $_SESSION['katakunci_nama_c'];
+ }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -49,7 +41,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
               <!-- /.card-header -->
               <div class="card-body">
               <div class="col-md-12">
-                  <form method="get" action="cerita.php">
+                  <form method="post" action="index.php?include=cerita">
                     <div class="row">
                         <div class="col-md-4 bottom-10">
                           <input type="text" class="form-control" id="kata_kunci" name="katakunci">
@@ -88,12 +80,10 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                             $posisi = ($halaman-1) * $batas;
                         }
                         $sql_c="select `c`.`id_cerita`, `c`.`cerita`, `u`.`nama`, `u`.`pekerjaan` from `cerita` `c` INNER JOIN `user` `u` ON `c`.`id_user` = `u`.`id_user`";
-                        if (isset($_GET["katakunci"])){
-                          $katakunci_nama = $_GET["katakunci"];
-                          $sql_c .= " where `u`.`nama` LIKE '%$katakunci_nama%'";
-                          $sql_c .= " ORDER BY `nama` limit $posisi, $batas";
-
+                        if (!empty($katakunci_nama_c)){
+                          $sql_c .= " where `u`.`nama` LIKE '%$katakunci_nama_c%'";
                         } 
+                        $sql_c .= " ORDER BY `nama` limit $posisi, $batas";
                         $query_c = mysqli_query($koneksi, $sql_c);
                         $no = $posisi + 1;
                         while($data_c = mysqli_fetch_row($query_c)){
@@ -108,7 +98,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                         <td><?php echo $pekerjaan; ?></td>
                         <td><?php echo $cerita; ?></td>
                         <td align="center">
-                        <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $cerita; ?>?'))window.location.href = 'cerita.php?aksi=hapus&data=<?php echo $id_cerita;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
+                        <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $cerita; ?>?'))window.location.href = 'index.php?include=cerita&aksi=hapus&data=<?php echo $id_cerita;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
                         </td>
                       </tr>
                       <?php $no++; } ?>
@@ -121,9 +111,8 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
               <?php
                 //hitung jumlah semua data 
                 $sql_jum = "select `c`.`id_cerita`, `c`.`cerita`, `u`.`nama`, `u`.`pekerjaan` from `cerita` `c` INNER JOIN `user` `u` ON `c`.`id_user` = `u`.`id_user` "; 
-                if (isset($_GET["katakunci"])){
-                  $katakunci_nama = $_GET["katakunci"];
-                  $sql_jum .= " WHERE `u`.`nama` LIKE '%$katakunci_nama%'";
+                if (!empty($katakunci_nama_c)){
+                  $sql_jum .= " WHERE `u`.`nama` LIKE '%$katakunci_nama_c%'";
                 } 
                 $sql_jum .= " ORDER BY `u`.`nama`";
                 $query_jum = mysqli_query($koneksi,$sql_jum);
@@ -133,77 +122,32 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
               <div class="card-footer clearfix">
               <ul class="pagination pagination-sm m-0 float-right">
                 <?php 
-                    if($jum_halaman==0){
-                      //tidak ada halaman
-                    }else if($jum_halaman==1){
-                      echo "<li class='page-item'><a class='page-link'>1</a></li>";
-                    }else{
-                      $sebelum = $halaman-1;
-                      $setelah = $halaman+1;
-                      if (isset($_GET["katakunci"])){
-                          $katakunci_nama = $_GET["katakunci"];
-                          if($halaman!=1){
-                              echo "<li class='page-item'>
-                              <a class='page-link' 
-                              href='cerita.php?katakunci=$katakunci_nama
-                              &halaman=1'>First</a></li>";
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='cerita.php?katakunci=$katakunci_nama&
-                              halaman=$sebelum'>
-                              «</a></li>";
-                          }
-                            for($i=1; $i<=$jum_halaman; $i++){
-                              if ($i > $halaman - 5 and $i < $halaman + 5 ) {
-                                if($i!=$halaman){
-                                    echo "<li class='page-item'><a class='page-link' 
-                                    href='cerita.php?katakunci
-                                    =$katakunci_nama&halaman=$i'>
-                                    $i</a></li>";
-                                }else{
-                                    echo "<li class='page-item'>
-                                    <a class='page-link'>$i</a></li>";
-                                }
-                              }
-                          }
-                            if($halaman!=$jum_halaman){
-                              echo "<li class='page-item'>
-                              <a class='page-link'  
-                              href='cerita.php?katakunci=$katakunci_nama
-                              &halaman=$setelah'>»</a></li>";
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='cerita.php?katakunci=
-                              $katakunci_nama&halaman=$jum_halaman'>
-                              Last</a></li>";
-                            }
+                if($jum_halaman==0){
+                  //tidak ada halaman
+                }else if($jum_halaman==1){
+                  echo "<li class='page-item'><a class='page-link'>1</a></li>";
+                }else{
+                  $sebelum = $halaman-1;
+                  $setelah = $halaman+1;
+                  if($halaman!=1){
+                    echo "<li class='page-item'><a class='page-link' href='index.php?include=cerita&halaman=1'>First</a></li>";
+                    echo "<li class='page-item'><a class='page-link' href='index.php?include=cerita&halaman=$sebelum'>«</a></li>";
+                  }
+                  for($i=1; $i<=$jum_halaman; $i++){
+                      if ($i > $halaman - 5 and $i < $halaman + 5 ) {
+                        if($i!=$halaman){
+                            echo "<li class='page-item'><a class='page-link' href='index.php?include=cerita&halaman=$i'>$i</a></li>";
                         }else{
-                          if($halaman!=1){
-                            echo "<li class='page-item'><a class='page-link' 
-                            href='cerita.php?halaman=1'>First</a></li>";
-                            echo "<li class='page-item'><a class='page-link' 
-                            href='cerita.php?
-                            halaman=$sebelum'>«</a></li>";
-                          }
-                          for($i=1; $i<=$jum_halaman; $i++){
-                            if ($i > $halaman - 5 and $i < $halaman + 5 ) {
-                               if($i!=$halaman){
-                                   echo "<li class='page-item'><a class='page-link' 
-                                   href='cerita.php?halaman=$i'>$i</a></li>";
-                               }else{
-                                   echo "<li class='page-item'><a class='page-link'>$i</a></li>";
-                               }
-                            }
-                         }
-                         
-                            if($halaman!=$jum_halaman){
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='cerita.php?halaman=$setelah'>
-                              »</a></li>";
-                              echo "<li class='page-item'><a class='page-link' 
-                              href='cerita.php?
-                              halaman=$jum_halaman'>Last</a></li>";
-                            }
-                            }
-                      }?>
+                            echo "<li class='page-item'><a class='page-link'>$i</a></li>";
+                        }
+                      }
+                  }
+                  if($halaman!=$jum_halaman){
+                        echo "<li class='page-item'><a class='page-link' href='index.php?include=cerita&halaman=$setelah'>»</a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='index.php?include=cerita&halaman=$jum_halaman'>Last</a></li>";
+                  }
+                              
+                }?>
                 </ul>
 
               </div>
@@ -211,14 +155,4 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
             <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

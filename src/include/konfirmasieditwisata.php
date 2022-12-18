@@ -1,6 +1,4 @@
 <?php
-session_start();
- include("../koneksi/koneksi.php");
  if(isset($_SESSION['id_wisata'])){
     $id_wisata = $_SESSION['id_wisata'];
     $wisata = $_POST['wisata'];
@@ -18,15 +16,15 @@ session_start();
  }
 
  if(empty($wisata)){	   
-    header("Location:editwisata.php?data=$id_wisata&notif=editkosong&jenis=wisata");
+    header("Location:index.php?include=edit-wisata&data=".$id_wisata."&notif=editkosong&jenis=wisata");
  }else if(empty($provinsi)){
-  header("Location:editwisata.php?data=$id_wisata&notif=editkosong&jenis=provinsi");
+  header("Location:index.php?include=edit-wisata&data=".$id_wisata."&notif=editkosong&jenis=provinsi");
  }else if(empty($kota)){	    
-    header("Location:editwisata.php?data=$id_wisata&notif=editkosong&jenis=kota");
+    header("Location:index.php?include=edit-wisata&data=".$id_wisata."&notif=editkosong&jenis=kota");
  }else if(empty($rating_wisata)){
-  header("Location:editwisata.php?data=$id_wisata&notif=editkosong&jenis=ratingwisata");
+  header("Location:index.php?include=edit-wisata&data=".$id_wisata."&notif=editkosong&jenis=ratingwisata");
  }else if(empty($deskripsi_wisata)){
-  header("Location:editwisata.php?data=$id_wisata&notif=editkosong&jenis=deskripsiwisata");
+  header("Location:index.php?include=edit-wisata&data=".$id_wisata."&notif=editkosong&jenis=deskripsiwisata");
  }else{   
     $lokasi_gambar_wisata1 = $_FILES['gambar_wisata1']['tmp_name'];
     $nama_gambar_wisata1 = $_FILES['gambar_wisata1']['name'];
@@ -72,6 +70,6 @@ session_start();
         mysqli_query($koneksi,$sql);
     }
     unset($_SESSION['id_wisata']);
-    header("Location:wisata.php?notif=editberhasil");
+    header("Location:index.php?include=wisata&notif=editberhasil");
   }
 ?>

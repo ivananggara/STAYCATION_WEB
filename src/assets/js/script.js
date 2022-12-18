@@ -8,7 +8,6 @@ window.addEventListener('scroll', function() {
     }
 });
 $('.owl-one').owlCarousel({
-    loop: true,
     margin: 15,
     nav: true,
     autoplay:true,
@@ -40,7 +39,6 @@ $('.owl-two').owlCarousel({
     }
 })
 $('.owl-des').owlCarousel({
-    loop: true,
     margin: 15,
     nav: true,
     autoplay:true,

@@ -1,9 +1,9 @@
 <?php
- session_start();
- include("../koneksi/koneksi.php");
+if(isset($_GET['data']) && isset($_GET['hotel'])){
     $id_wisata = $_GET['data'];
     $id_hotel = $_GET['hotel'];
     $_SESSION['id_hotel'] = $id_hotel;
+    $_SESSION['id_wisata'] = $id_wisata;
     $sql_h = "SELECT `hotel`, `bintang_hotel`, `jarak`, `fasilitas`, `deskripsi_hotel`, `email_hotel`, `kontak_hotel`, `gambar_hotel`, `gambar_interior1`, `gambar_interior2`, `gambar_interior3`, `gambar_interior4` FROM `hotel` WHERE `id_hotel` ='$id_hotel'";
     $query_h = mysqli_query($koneksi, $sql_h);
     while($data_h = mysqli_fetch_row($query_h)){
@@ -20,23 +20,15 @@
         $gambar_interior3 = $data_h[10];
         $gambar_interior4 = $data_h[11];
     }
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php 
-    include("includes_user/head.php");
-?>
-<link rel="stylesheet" href="assets/css/detail_hotel.css" type="text/css">
 
-<body>
-    <?php 
-        include("includes_user/navbar.php");
-    ?>
+<link rel="stylesheet" href="assets/css/detail_hotel.css" type="text/css">
     <nav aria-label="breadcrumb" id="breadcrumb">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="detail_destinasi.php?data=<?php echo $id_wisata; ?>">Detail Destinasi</a></li>
+                <li class="breadcrumb-item"><a href="index.php?include=home">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.php?include=detail-destinasi&data=<?php echo $id_wisata; ?>">Detail Destinasi</a></li>
                 <li class="breadcrumb-item active-item" aria-current="page">Detail Hotels
             </ol>
         </div>
@@ -100,7 +92,7 @@
                                         <?php } ?>                                        
                                     <?php }?>
                                 <?php }?>
-                            <form action="continuebooking.php" method="post">
+                            <form action="index.php?include=continue-booking" method="post">
                                 <div class="mb-3 form-profile">
                                     <label for="exampleInputEmail1" class="form-label label-profile">Night</label>
                                     <input type="int" class="form-control" id="exampleInputEmail1" name="night" aria-describedby="emailHelp" placeholder="how long you will stay">
@@ -130,10 +122,3 @@
             </div>
         </div>
     </section>
-    <?php 
-        include("includes_user/footer.php");
-        include("includes_user/script.php");
-    ?>
-    
-</body>
-</html>

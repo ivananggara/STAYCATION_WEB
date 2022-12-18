@@ -1,6 +1,4 @@
 <?php
-session_start();
-include('../koneksi/koneksi.php');
 if (isset($_GET['data'])){
   $id_wisata = $_GET['data'];
   $_SESSION['id_wisata'] = $id_wisata;
@@ -18,20 +16,7 @@ if (isset($_GET['data'])){
   }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -40,7 +25,7 @@ if (isset($_GET['data'])){
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="wisata.php">Wisata</a></li>
+              <li class="breadcrumb-item"><a href="index.php?include=wisata">Wisata</a></li>
               <li class="breadcrumb-item active">Edit Wisata</li>
             </ol>
           </div>
@@ -55,7 +40,7 @@ if (isset($_GET['data'])){
       <div class="card-header">
         <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Edit Wisata</h3>
         <div class="card-tools">
-          <a href="wisata.php" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+          <a href="index.php?include=wisata" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
         </div>
       </div>
       <!-- /.card-header -->
@@ -67,7 +52,7 @@ if (isset($_GET['data'])){
             <?php echo $_GET['jenis'];?> wajib di isi</div>
         <?php }?>
       <?php }?>
-      <form class="form-horizontal" action="konfirmasieditwisata.php" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" action="index.php?include=konfirmasi-edit-wisata" method="post" enctype="multipart/form-data">
         <div class="card-body">          
           <div class="form-group row">
             <label for="foto" class="col-sm-12 col-form-label"><span class="text-info">
@@ -143,14 +128,4 @@ if (isset($_GET['data'])){
     <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
 
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>

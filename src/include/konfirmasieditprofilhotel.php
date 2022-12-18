@@ -1,6 +1,4 @@
 <?php
-session_start();
- include("../koneksi/koneksi.php");
  if(isset($_SESSION['id_user'])){
     $id_user = $_SESSION['id_user'];
     $hotel = $_POST['hotel'];
@@ -22,19 +20,19 @@ session_start();
  }
 
  if(empty($hotel)){	   
-    header("Location:editprofilhotel.php?data=$id_user&notif=editkosong&jenis=hotel");
+    header("Location:index.php?include=edit-profil-hotel&data=$id_user&notif=editkosong&jenis=hotel");
  }else if(empty($email_hotel)){
-  header("Location:editprofilhotel.php?data=$id_user&notif=editkosong&jenis=email hotel");
+  header("Location:index.php?include=edit-profil-hotel&data=$id_user&notif=editkosong&jenis=email hotel");
  }else if(empty($kontak_hotel)){	    
-    header("Location:editprofilhotel.php?data=$id_user&notif=editkosong&jenis=kontak hotel");
+    header("Location:index.php?include=edit-profil-hotel&data=$id_user&notif=editkosong&jenis=kontak hotel");
  }else if(empty($bintang_hotel)){
-  header("Location:editprofilhotel.php?data=$id_user&notif=editkosong&jenis=bintang hotel");
+  header("Location:index.php?include=edit-profil-hotel&data=$id_user&notif=editkosong&jenis=bintang hotel");
  }else if(empty($jarak)){
-  header("Location:editprofilhotel.php?data=$id_user&notif=editkosong&jenis=jarak");
+  header("Location:index.php?include=edit-profil-hotel&data=$id_user&notif=editkosong&jenis=jarak");
  }else if(empty($fasilitas)){
-  header("Location:editprofilhotel.php?data=$id_user&notif=editkosong&jenis=fasilitas");
+  header("Location:index.php?include=edit-profil-hotel&data=$id_user&notif=editkosong&jenis=fasilitas");
  }else if(empty($deskripsi_hotel)){
-  header("Location:editprofilhotel.php?data=$id_user&notif=editkosong&jenis=deskripsihotel");
+  header("Location:index.php?include=edit-profil-hotel&data=$id_user&notif=editkosong&jenis=deskripsihotel");
  }else{   
     $lokasi_gambar_hotel = $_FILES['gambar_hotel']['tmp_name'];
     $nama_gambar_hotel = $_FILES['gambar_hotel']['name'];
@@ -98,6 +96,6 @@ session_start();
        `email_hotel`='$email_hotel',`kontak_hotel`='$kontak_hotel',`bintang_hotel`='$bintang_hotel', `jarak`='$jarak',`fasilitas`='$fasilitas',`deskripsi_hotel`='$deskripsi_hotel' where `id_user`='$id_user'";
         mysqli_query($koneksi,$sql);
     }
-    header("Location:profilhotel.php?notif=editberhasil");
+    header("Location:index.php?include=profil-hotel&notif=editberhasil");
   }
 ?>

@@ -1,6 +1,4 @@
 <?php
-  include("../koneksi/koneksi.php");
-  session_start();
   if(isset($_GET['data'])){
     $id_hotel = $_GET['data'];
     $_SESSION['id_hotel'] = $id_hotel;
@@ -22,20 +20,7 @@
     }
   }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("includes/head.php") ?> 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-<?php include("includes/header.php") ?>
 
-  <?php include("includes/sidebar.php") ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -44,7 +29,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="hotel.php">Hotel</a></li>
+              <li class="breadcrumb-item"><a href="index.php?include=hotel">Hotel</a></li>
               <li class="breadcrumb-item active">Detail Hotel</li>
             </ol>
           </div>
@@ -57,7 +42,7 @@
             <div class="card">
               <div class="card-header">
                 <div class="card-tools">
-                  <a href="hotel.php" class="btn btn-sm btn-warning float-right">
+                  <a href="index.php?include=hotel" class="btn btn-sm btn-warning float-right">
                   <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
                 </div>
               </div>
@@ -122,14 +107,3 @@
             <!-- /.card -->
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <?php include("includes/footer.php") ?>
-
-</div>
-<!-- ./wrapper -->
-
-<?php include("includes/script.php") ?>
-</body>
-</html>
